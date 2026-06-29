@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Langert Commercial Group | Commercial Real Estate Brokers — MD & DC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#ffffff;
+    --ink:#14161d;
+    --ink-2:#1d212e;
+    --slate:#2a3350;
+    --dark:#0d0e15;
+    --blue:#7d99d1;
+    --blue-2:#a7bce2;
+    --blue-3:#5f7cba;
+    --blue-glow:#8ea7d6;
+    --muted:#6b7585;
+    --line:#e6e8ee;
+    --paper:#f4f5f8;
+    --shadow:0 30px 70px -25px rgba(20,22,29,.35);
+    --shadow-sm:0 12px 30px -12px rgba(20,22,29,.25);
+    --serif:'Fraunces','Georgia',serif;
+    --sans:'Inter',-apple-system,'Segoe UI',sans-serif;
+    --ease:cubic-bezier(.2,.7,.2,1);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:500;line-height:1.04;letter-spacing:-.02em}
+  a{text-decoration:none;color:inherit}
+  img{display:block;max-width:100%}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px}
+  ::selection{background:var(--blue);color:#fff}
+
+  .eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.28em;font-size:.7rem;font-weight:700;color:var(--blue-3);display:inline-flex;align-items:center;gap:12px}
+  .eyebrow::before{content:'';width:26px;height:1px;background:var(--blue)}
+  .eyebrow.light{color:var(--blue-2)}
+  .eyebrow.center{justify-content:center}
+
+  /* ===== CUSTOM CURSOR ===== */
+  .cursor,.cursor-dot{position:fixed;top:0;left:0;border-radius:50%;pointer-events:none;z-index:9999;mix-blend-mode:difference;opacity:0;transition:opacity .3s}
+  .cursor{width:38px;height:38px;border:1.5px solid #fff;transform:translate(-50%,-50%);transition:width .25s,height .25s,opacity .3s,background .25s}
+  .cursor-dot{width:5px;height:5px;background:#fff;transform:translate(-50%,-50%)}
+  body.cursor-on .cursor,body.cursor-on .cursor-dot{opacity:1}
+  body.cursor-on{cursor:none}
+  body.cursor-on a,body.cursor-on button{cursor:none}
+  .cursor.grow{width:64px;height:64px;background:rgba(255,255,255,.08)}
+
+  /* ===== SCROLL PROGRESS ===== */
+  .progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--blue-3),var(--blue-2));z-index:2000;transition:width .1s linear}
+
+  /* ===== NAV ===== */
+  header{position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .45s var(--ease);padding:22px 0}
+  header.scrolled{padding:13px 0;background:rgba(13,14,21,.72);backdrop-filter:blur(18px) saturate(140%);-webkit-backdrop-filter:blur(18px) saturate(140%);border-bottom:1px solid rgba(255,255,255,.08)}
+  .nav{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:13px}
+  .logomark{position:relative;display:inline-block;width:38px;height:38px;flex-shrink:0;transition:transform .5s var(--ease)}
+  .logo:hover .logomark{transform:rotate(-6deg) scale(1.05)}
+  .logomark .lm-blue{position:absolute;left:0;bottom:0;width:38px;height:38px;border-left:9px solid var(--blue);border-bottom:9px solid var(--blue)}
+  .logomark .lm-dark{position:absolute;top:0;right:0;width:22px;height:22px;background:#fff}
+  .logo-txt{display:flex;flex-direction:column;line-height:1.05}
+  .logo .mark{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:#fff;letter-spacing:0}
+  .logo .sub{font-family:var(--serif);font-style:italic;font-size:.64rem;letter-spacing:.02em;color:var(--blue-2);margin-top:3px}
+  .menu{display:flex;align-items:center;gap:34px;list-style:none}
+  .menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0}
+  .menu a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--blue-2);transition:width .3s var(--ease)}
+  .menu a:hover{color:#fff}
+  .menu a:hover::after{width:100%}
+  .nav-right{display:flex;align-items:center;gap:24px}
+  .nav-phone{color:rgba(255,255,255,.9);font-weight:600;font-size:.88rem;display:flex;align-items:center;gap:7px;transition:color .2s}
+  .nav-phone:hover{color:var(--blue-2)}
+
+  /* ===== BUTTONS ===== */
+  .btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-family:var(--sans);font-weight:600;font-size:.9rem;padding:14px 28px;border-radius:100px;cursor:pointer;border:none;letter-spacing:.01em;overflow:hidden;transition:transform .35s var(--ease),box-shadow .35s var(--ease),color .3s,background .3s;will-change:transform}
+  .btn span{position:relative;z-index:2}
+  .btn-blue{background:var(--blue);color:var(--ink)}
+  .btn-blue::before{content:'';position:absolute;inset:0;background:var(--blue-2);transform:translateY(101%);transition:transform .4s var(--ease);z-index:1}
+  .btn-blue:hover::before{transform:translateY(0)}
+  .btn-blue:hover{box-shadow:0 14px 34px -10px rgba(126,153,209,.7)}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+  .btn-ghost::before{content:'';position:absolute;inset:0;background:#fff;transform:translateY(101%);transition:transform .4s var(--ease);z-index:1}
+  .btn-ghost:hover{color:var(--ink);border-color:#fff}
+  .btn-ghost:hover::before{transform:translateY(0)}
+  .btn-dark{background:var(--ink);color:#fff}
+  .btn-dark::before{content:'';position:absolute;inset:0;background:var(--blue);transform:translateY(101%);transition:transform .4s var(--ease);z-index:1}
+  .btn-dark:hover{color:var(--ink)}
+  .btn-dark:hover::before{transform:translateY(0)}
+  .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;z-index:1100}
+  .hamburger span{width:26px;height:2px;background:#fff;transition:.35s var(--ease);transform-origin:center}
+  .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .hamburger.open span:nth-child(2){opacity:0}
+  .hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;min-height:90vh;min-height:90svh;display:flex;align-items:center;color:#fff;overflow:hidden;background:var(--dark)}
+  .hero-media{position:absolute;inset:0;z-index:0;will-change:transform}
+  .hero-media video,.hero-media .fallback{position:absolute;inset:-8%;width:116%;height:116%;object-fit:cover}
+  .hero-media .fallback{background:linear-gradient(120deg,#0d0e15,#28304a)}
+  .hero::after{content:'';position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,rgba(7,8,12,.94) 0%,rgba(13,14,21,.7) 50%,rgba(13,14,21,.35) 100%)}
+  .grain{position:absolute;inset:0;z-index:2;opacity:.06;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  .hero-glow{position:absolute;z-index:1;width:55vw;height:55vw;right:-10vw;top:-10vw;background:radial-gradient(circle,rgba(126,153,209,.4),transparent 62%);filter:blur(40px);animation:float 14s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,5%) scale(1.08)}}
+  .hero-inner{position:relative;z-index:3;width:100%;padding-top:60px}
+  .hero h1{font-size:clamp(2rem,4.5vw,3.6rem);margin:14px 0 16px;letter-spacing:-.035em;font-weight:400}
+  .hero h1 .l2{display:block}
+  .hero h1 em{font-style:italic;color:var(--blue-2);font-weight:300}
+  .hero p{font-size:clamp(.95rem,1.2vw,1.05rem);color:rgba(255,255,255,.8);max-width:580px;margin-bottom:24px;font-weight:300}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-cta .btn{padding:13px 26px}
+  /* hero entrance */
+  .hero .anim{opacity:0;transform:translateY(40px);animation:heroUp 1.1s var(--ease) forwards}
+  .hero .a1{animation-delay:.15s}.hero .a2{animation-delay:.32s}.hero .a3{animation-delay:.5s}.hero .a4{animation-delay:.66s}
+  @keyframes heroUp{to{opacity:1;transform:none}}
+
+  /* ===== MARQUEE ===== */
+  .marquee{position:relative;z-index:3;background:var(--blue);color:var(--ink);overflow:hidden;padding:16px 0;white-space:nowrap}
+  .marquee-track{display:inline-flex;gap:48px;animation:scrollX 28s linear infinite;will-change:transform}
+  .marquee-track span{font-family:var(--serif);font-weight:500;font-size:1.05rem;display:inline-flex;align-items:center;gap:48px}
+  .marquee-track span::after{content:'✦';font-size:.7rem;opacity:.55}
+  @keyframes scrollX{to{transform:translateX(-50%)}}
+
+  /* ===== SECTIONS ===== */
+  section{position:relative}
+  .pad{padding:clamp(24px,3vw,44px) 0}
+  .center{text-align:center}
+  .shead{max-width:760px;margin:0 auto 22px}
+  .shead.center{text-align:center}
+  .shead h2{font-size:clamp(1.5rem,3vw,2.4rem);margin:10px 0 12px;color:var(--ink);letter-spacing:-.03em;font-weight:400}
+  .shead.dark h2{color:#fff}
+  .shead p{color:var(--muted);font-size:.95rem;font-weight:300}
+  .shead.dark p{color:rgba(255,255,255,.7)}
+  .sidx{font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;color:var(--blue-3);font-weight:700;opacity:.7}
+
+  /* ===== SPECIALTIES ===== */
+  .spec{background:var(--paper)}
+  .tabbar{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:44px}
+  .tabbtn{font-family:var(--sans);background:#fff;border:1px solid var(--line);cursor:pointer;padding:13px 24px;font-size:.92rem;font-weight:600;color:var(--muted);border-radius:100px;transition:all .3s var(--ease)}
+  .tabbtn:hover{color:var(--ink);border-color:var(--blue)}
+  .tabbtn.active{background:var(--ink);color:#fff;border-color:var(--ink)}
+  .panels{position:relative;border-radius:18px;overflow:hidden;min-height:320px;box-shadow:var(--shadow)}
+  .panel{position:absolute;inset:0;opacity:0;visibility:hidden;transition:opacity .7s var(--ease);display:flex;align-items:flex-end}
+  .panel.active{opacity:1;visibility:visible;position:relative}
+  .panel .pbg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.12);transition:transform 8s linear}
+  .panel.active .pbg{transform:scale(1)}
+  .panel::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,8,12,.96) 0%,rgba(13,14,21,.6) 45%,rgba(13,14,21,.15) 100%)}
+  .pcontent{position:relative;z-index:2;color:#fff;padding:clamp(16px,2.5vw,28px);max-width:720px}
+  .pnum{font-family:var(--serif);font-size:clamp(2rem,4vw,3.2rem);color:rgba(255,255,255,.14);line-height:.8;margin-bottom:6px;font-weight:300}
+  .pcontent h3{font-size:clamp(1.2rem,2.2vw,1.7rem);margin-bottom:10px;font-weight:400}
+  .pcontent p{color:rgba(255,255,255,.85);font-size:.9rem;margin-bottom:14px;font-weight:300;max-width:600px}
+  .ptags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:30px}
+  .ptags span{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);padding:7px 15px;border-radius:100px;font-size:.8rem;font-family:var(--sans);backdrop-filter:blur(6px)}
+
+  /* ===== LISTINGS ===== */
+  .listings{background:#fff}
+  .lgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:14px}
+  .lcard{background:#fff;border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .lcard:hover{transform:translateY(-10px);box-shadow:var(--shadow)}
+  .limg{position:relative;aspect-ratio:16/9;overflow:hidden}
+  .limg .bg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s var(--ease)}
+  .lcard:hover .limg .bg{transform:scale(1.08)}
+  .lstatus{position:absolute;top:16px;left:16px;background:var(--blue);color:var(--ink);font-family:var(--sans);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:7px 13px;border-radius:100px}
+  .ltag{position:absolute;bottom:16px;left:16px;background:rgba(13,14,21,.7);color:#fff;font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;padding:6px 12px;border-radius:100px;backdrop-filter:blur(8px)}
+  .lbody{padding:26px;display:flex;flex-direction:column;flex:1}
+  .lbody h3{font-family:var(--serif);font-size:1.4rem;color:var(--ink);margin-bottom:5px;font-weight:500}
+  .laddr{font-size:.88rem;color:var(--muted);margin-bottom:20px}
+  .lspecs{display:flex;gap:18px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:20px}
+  .lspecs .sp{flex:1}
+  .lspecs .sv{font-family:var(--serif);font-size:1.15rem;color:var(--ink);font-weight:500}
+  .lspecs .sl{font-size:.66rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-top:3px}
+  .lcta{margin-top:auto}
+  .llink{display:flex;align-items:center;justify-content:space-between;font-family:var(--sans);font-weight:600;font-size:.9rem;color:var(--ink);transition:gap .3s}
+  .llink svg{transition:transform .3s var(--ease)}
+  .lcard:hover .llink svg{transform:translateX(6px)}
+
+  /* ===== EVAN ===== */
+  .evan{background:var(--dark);color:#fff;overflow:hidden}
+  .evan-grid{display:grid;grid-template-columns:1fr 1.4fr;gap:36px;align-items:start}
+  .evan-photo{position:relative}
+  .evan-photo .frame{position:relative;border-radius:14px;overflow:hidden;z-index:2;will-change:transform}
+  .evan-photo img{width:100%;display:block;filter:grayscale(.15) contrast(1.02)}
+  .evan-photo::before{content:'';position:absolute;left:-20px;top:-20px;width:130px;height:130px;border-top:3px solid var(--blue);border-left:3px solid var(--blue);border-radius:8px 0 0 0;z-index:1}
+  .evan-photo::after{content:'';position:absolute;right:-22px;bottom:-22px;width:170px;height:170px;background:radial-gradient(circle,rgba(126,153,209,.5),transparent 65%);filter:blur(30px);z-index:0}
+  .evan-badge{position:absolute;z-index:3;right:-18px;top:30px;background:rgba(13,14,21,.7);border:1px solid rgba(255,255,255,.14);backdrop-filter:blur(12px);color:#fff;padding:16px 22px;border-radius:12px;text-align:center;box-shadow:var(--shadow-sm)}
+  .evan-badge .bn{font-family:var(--serif);font-size:1.9rem;color:var(--blue-2);line-height:1;font-weight:500}
+  .evan-badge .bl{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:5px}
+  .evan-name{display:flex;align-items:center;gap:16px;margin:18px 0 6px;flex-wrap:wrap}
+  .evan-name h2{font-size:clamp(2rem,3.6vw,2.9rem);color:#fff;font-weight:400}
+  .evan-name .esq{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-2);border:1px solid rgba(167,188,226,.5);padding:6px 11px;border-radius:100px;white-space:nowrap}
+  .evan-role{font-family:var(--sans);font-size:.92rem;color:rgba(255,255,255,.6);font-weight:500;letter-spacing:.04em;margin-bottom:26px}
+  .evan p{color:rgba(255,255,255,.78);font-size:.9rem;margin-bottom:10px;font-weight:300}
+  .evan p.lead{font-size:clamp(1rem,1.4vw,1.2rem);color:#fff;line-height:1.4;font-family:var(--serif);font-weight:300}
+  .evan p.lead b{color:var(--blue-2);font-weight:400;font-style:italic}
+  .evan .disc{font-size:.82rem;color:rgba(255,255,255,.5);font-style:italic;border-left:2px solid var(--blue);padding:10px 18px;margin-top:24px;line-height:1.55}
+
+  /* ===== STATS ===== */
+  .stats{background:var(--slate);color:#fff;position:relative;overflow:hidden}
+  .stats::before{content:'';position:absolute;left:-10%;bottom:-40%;width:50vw;height:50vw;background:radial-gradient(circle,rgba(126,153,209,.25),transparent 60%);filter:blur(30px)}
+  .sgrid{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:30px;text-align:center}
+  .stat .n{font-family:var(--serif);font-size:clamp(1.8rem,3vw,2.6rem);color:#fff;font-weight:400;line-height:1;letter-spacing:-.02em}
+  .stat .n b{color:var(--blue-2);font-weight:400}
+  .stat .l{margin-top:12px;font-size:.86rem;color:rgba(255,255,255,.7);letter-spacing:.04em;font-weight:300}
+
+  /* ===== VIDEOS ===== */
+  .videos{background:#fff}
+  .vgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:14px}
+  .vcard{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .vcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .vframe{position:relative;aspect-ratio:16/9;background:var(--ink);overflow:hidden}
+  .vframe iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .vph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;background:linear-gradient(135deg,var(--ink),var(--slate));cursor:pointer}
+  .vph .play{width:64px;height:64px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;color:var(--ink);transition:transform .35s var(--ease);box-shadow:0 10px 30px rgba(0,0,0,.4)}
+  .vcard:hover .vph .play{transform:scale(1.12)}
+  .vph span{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;font-weight:700;color:rgba(255,255,255,.6)}
+  .vinfo{padding:24px}
+  .vinfo h3{font-family:var(--serif);font-size:1.25rem;color:var(--ink);margin-bottom:6px;font-weight:500}
+  .vinfo p{font-size:.9rem;color:var(--muted);font-weight:300}
+
+  /* ===== CASES ===== */
+  .cases{background:var(--paper)}
+  .cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:14px}
+  .ccard{position:relative;border-radius:16px;overflow:hidden;display:flex;flex-direction:column;min-height:260px;color:#fff;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .ccard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .ccard .cbg{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .8s var(--ease)}
+  .ccard:hover .cbg{transform:scale(1.08)}
+  .ccard::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(7,8,12,.95),rgba(13,14,21,.3) 70%)}
+  .ccat{position:relative;z-index:2;margin:22px 22px 0;align-self:flex-start;background:var(--blue);color:var(--ink);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 13px;border-radius:100px}
+  .cbody{position:relative;z-index:2;margin-top:auto;padding:26px}
+  .cbody h3{font-family:var(--serif);font-size:1.35rem;margin-bottom:10px;font-weight:500;line-height:1.2}
+  .cbody p{font-size:.92rem;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:16px;font-weight:300}
+  .clink{font-family:var(--sans);font-weight:700;font-size:.84rem;letter-spacing:.04em;color:var(--blue-2);display:inline-flex;align-items:center;gap:8px;transition:gap .3s}
+  .clink:hover{gap:13px}
+
+  /* ===== CTA ===== */
+  .cta{background:var(--dark);color:#fff;text-align:center;overflow:hidden}
+  .cta::before{content:'';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:80vw;height:80vw;background:radial-gradient(circle,rgba(126,153,209,.22),transparent 55%);filter:blur(40px);animation:float 16s ease-in-out infinite}
+  .cta-inner{position:relative;z-index:2}
+  .cta h2{font-size:clamp(2.2rem,4.6vw,3.6rem);margin:18px auto 22px;max-width:880px;font-weight:400;letter-spacing:-.03em}
+  .cta h2 em{font-style:italic;color:var(--blue-2)}
+  .cta p{color:rgba(255,255,255,.72);font-size:1.15rem;margin-bottom:38px;font-weight:300}
+  .cta .hero-cta{justify-content:center}
+
+  /* ===== FOOTER ===== */
+  footer{background:#08090e;color:rgba(255,255,255,.65);padding:44px 0 24px}
+  .fgrid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:44px;margin-bottom:56px}
+  .fcol h4{color:#fff;font-family:var(--sans);font-size:.78rem;text-transform:uppercase;letter-spacing:.18em;margin-bottom:22px;font-weight:600}
+  .fcol a,.fcol p{display:block;color:rgba(255,255,255,.6);font-size:.92rem;margin-bottom:12px;transition:color .25s;font-weight:300}
+  .fcol a:hover{color:var(--blue-2)}
+  .flogo .mark{font-family:var(--serif);font-size:1.5rem;color:#fff}
+  .flogo .sub{font-family:var(--serif);font-style:italic;font-size:.78rem;color:var(--blue-2);margin-top:3px;display:block}
+  .fsocial{display:flex;gap:11px;margin-top:20px}
+  .fsocial a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.07);display:flex;align-items:center;justify-content:center;color:#fff;margin:0;transition:all .3s var(--ease)}
+  .fsocial a:hover{background:var(--blue);color:var(--ink);transform:translateY(-3px)}
+  .fbot{border-top:1px solid rgba(255,255,255,.1);padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:.8rem;color:rgba(255,255,255,.4)}
+  .fbot a{color:rgba(255,255,255,.55)}
+
+  /* ===== REVEAL ===== */
+  .js .r{opacity:0;transform:translateY(38px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:var(--d,0s)}
+  .js .r.show{opacity:1;transform:none}
+  .js .r-clip{clip-path:inset(0 100% 0 0);transition:clip-path 1s var(--ease);transition-delay:var(--d,0s)}
+  .js .r-clip.show{clip-path:inset(0 0 0 0)}
+
+  /* ===== RESPONSIVE ===== */
+  @media(max-width:1000px){
+    .evan-grid{grid-template-columns:1fr;gap:80px}
+    .evan-photo{max-width:440px;margin:0 auto}
+    .lgrid,.vgrid,.cgrid{grid-template-columns:1fr 1fr}
+    .sgrid{grid-template-columns:repeat(2,1fr);gap:44px 24px}
+  }
+  @media(max-width:760px){
+    .menu,.nav-phone{display:none}
+    .menu.open{display:flex;position:fixed;inset:0;flex-direction:column;justify-content:center;align-items:center;gap:30px;background:rgba(13,14,21,.97);backdrop-filter:blur(20px)}
+    .menu.open a{font-size:1.5rem;font-family:var(--serif)}
+    .hamburger{display:flex}
+    .lgrid,.vgrid,.cgrid{grid-template-columns:1fr}
+    .sgrid{grid-template-columns:1fr 1fr}
+    .nav-right .btn{display:none}
+  }
+  @media(max-width:480px){.fgrid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.hero-cta .btn{width:100%}}
+
+  @media(prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+    .js .r,.js .r-clip{opacity:1!important;transform:none!important;clip-path:none!important}
+    .hero .anim{opacity:1;transform:none}
+    body.cursor-on{cursor:auto}.cursor,.cursor-dot{display:none}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+<div class="cursor" id="cursor"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- ============ NAV ============ -->
+<header id="header">
+  <div class="wrap nav">
+    <a href="#top" class="logo" data-cursor>
+      <span class="logomark"><span class="lm-blue"></span><span class="lm-dark"></span></span>
+      <span class="logo-txt">
+        <span class="mark">The Langert Group</span>
+        <span class="sub">Signature Commercial Real Estate Services</span>
+      </span>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#top">Home</a></li>
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#specialties">Our Services</a></li>
+      <li><a href="#listings">Featured Listings</a></li>
+      <li><a href="#insights">Insights</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="tel:4435290505" class="nav-phone" data-cursor>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        (443) 529-0505
+      </a>
+      <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Request Consultation</span></a>
+      <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-media" id="heroMedia">
+    <div class="fallback"></div>
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1920&q=80">
+      <source src="https://vid.cdn-website.com/a8a63bb6/videos/f0zpr55PRjaxOgs6yR0Z_Langert+Commercial+Group+Web+Banner_final-v.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="hero-glow"></div>
+  <div class="grain"></div>
+  <div class="wrap hero-inner">
+    <span class="eyebrow light anim a1">Serving Maryland &amp; Washington, D.C.</span>
+    <h1 class="anim a2">Expert Guidance.<span class="l2"><em>Exceptional Outcomes.</em></span></h1>
+    <p class="anim a3">Strategic commercial real estate brokers and advisors serving Maryland and the greater D.C. corridor — Anne Arundel, Prince George's, Montgomery, Howard, Frederick, Carroll, and Baltimore Counties.</p>
+    <div class="hero-cta anim a4">
+      <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Request a Consultation</span></a>
+      <a href="tel:4435290505" class="btn btn-ghost magnetic" data-cursor><span>Call (443) 529-0505</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Office<i style="font-style:normal"></i></span><span>Retail &amp; Restaurant</span><span>Industrial &amp; Flex</span><span>Multi-Family</span><span>Land &amp; Development</span>
+    <span>Office</span><span>Retail &amp; Restaurant</span><span>Industrial &amp; Flex</span><span>Multi-Family</span><span>Land &amp; Development</span>
+  </div>
+</div>
+
+<!-- ============ ABOUT US ============ -->
+<section class="evan pad" id="about">
+  <div class="wrap">
+    <div class="shead center dark r" style="margin-bottom:24px">
+      <span class="sidx" style="color:var(--blue-2)">01 — About Us</span>
+      <h2>Get to Know The Langert Group</h2>
+      <p>A personal welcome from our team — and a look at the experience behind every deal.</p>
+    </div>
+  </div>
+  <div class="wrap evan-grid" style="margin-top:20px">
+    <div class="r r-noclip" style="display:flex;flex-direction:column;gap:18px">
+      <!-- WELCOME VIDEO: to embed, delete the <div class="vph">...</div> line below and uncomment the <iframe>, replacing YOUR_VIDEO_ID -->
+      <div class="vframe" style="border-radius:12px;box-shadow:var(--shadow-sm)">
+        <iframe src="https://drive.google.com/file/d/1JXgEp3Hogrm4g7bdVGYJTtKkhRy-KzSL/preview" title="Welcome — The Langert Group" allow="autoplay" allowfullscreen></iframe>
+      </div>
+      <div class="evan-photo">
+        <!-- EVAN PHOTO: 2026 headshot hosted on the firm's CDN -->
+        <div class="frame" id="evanFrame"><img src="https://lirp.cdn-website.com/a8a63bb6/dms3rep/multi/opt/EKL+2026+Headshot-640w.jpeg" alt="Evan Langert, Managing Director, The Langert Commercial Group"></div>
+        <div class="evan-badge"><div class="bn">35+</div><div class="bl">Years in CRE</div></div>
+      </div>
+    </div>
+    <div class="evan-text r" style="--d:.12s">
+      <span class="sidx" style="color:var(--blue-2)">Leadership</span>
+      <div class="evan-name"><h2>Evan Langert</h2><span class="esq">Attorney by Background</span></div>
+      <div class="evan-role">President &middot; The Langert Commercial Group, Inc.</div>
+      <p>For more than 20 years, Evan Langert has represented buyers, sellers, landlords, tenants, investors, churches, schools, and business owners throughout Maryland, Washington, D.C., and beyond (we've done numerous investment deals from New York to Florida). As President of The Langert Commercial Group, Inc., Evan specializes in commercial real estate sales, leasing, investment properties, church and nonprofit real estate, office buildings, retail centers, industrial properties, land, and multifamily assets. His clients benefit from a unique combination of high-level legal, lending, ownership, and brokerage experience that allows him to identify opportunities, solve problems, and navigate complex transactions with confidence.</p>
+      <p>Before entering commercial real estate brokerage, Evan spent almost a decade as the senior transactional real estate attorney for the eastern half of the United States for a multi-billion-dollar publicly traded real estate investment trust (REIT). The REIT was also fully diversified, with significant retail, office, industrial, multifamily, and hospitality portfolios in over 20 different states. As such, Evan received an extensive education on dealing with all five major property types. Earlier in his career, he worked as a commercial real estate lender at one of the top 25 banks in the country, evaluating and financing a wide range of investment and owner-user properties. This background provides clients with insights that extend beyond those offered by traditional brokerages, including transaction structuring, due diligence, lease analysis, financing considerations, risk assessment, and negotiations.</p>
+      <p>Evan has successfully represented clients in the sale and leasing of retail, office, industrial, religious, educational, multi-family, hospitality, and investment properties across the Washington and Baltimore metropolitan regions. His experience includes helping churches and nonprofit organizations maximize the value of their real estate assets, assisting franchisees and other business owners with site selection and expansion strategies, and advising investors on acquisition, disposition, and leasing opportunities. He is known for providing practical, straightforward advice grounded in decades of real-world commercial real estate experience.</p>
+      <p>At The Langert Commercial Group, clients work directly with an experienced commercial real estate professional who remains personally involved throughout every stage of the assignment. Whether the objective is buying or selling a commercial property, locating investment opportunities, leasing office, retail or industrial space, acquiring land for development, or evaluating a church or nonprofit property, Evan's focus is the same: delivering thoughtful guidance, strong advocacy, and results-driven commercial real estate solutions throughout Maryland, Washington, D.C., and beyond.</p>
+      <p class="disc">Evan Langert is an attorney by background. The Langert Commercial Group provides commercial real estate brokerage and advisory services only — the firm does not practice law, render legal advice, or accept legal engagements.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIALTIES ============ -->
+<section class="spec pad" id="specialties">
+  <div class="wrap">
+    <div class="shead center r">
+      <span class="sidx">02 — Our Services</span>
+      <h2>Versatility Across Every Asset Class</h2>
+      <p>From a single storefront to a multi-million-square-foot portfolio, our team brings deep expertise across all five core categories of commercial real estate.</p>
+    </div>
+    <div class="tabbar r">
+      <button class="tabbtn active" data-tab="office" data-cursor>Office</button>
+      <button class="tabbtn" data-tab="retail" data-cursor>Retail &amp; Restaurant</button>
+      <button class="tabbtn" data-tab="industrial" data-cursor>Industrial &amp; Flex</button>
+      <button class="tabbtn" data-tab="multifamily" data-cursor>Multi-Family</button>
+      <button class="tabbtn" data-tab="land" data-cursor>Land &amp; Development</button>
+      <button class="tabbtn" data-tab="churches" data-cursor>Churches / Houses of Worship</button>
+    </div>
+    <div class="panels r" style="--d:.1s">
+      <div class="panel active" id="office">
+        <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="pcontent">
+          <div class="pnum">01</div>
+          <h3>Landlord &amp; Tenant Representation</h3>
+          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented office tenants, owners/landlords, investors, and owner-users in the leasing, acquisition, and disposition of office properties throughout Maryland and Washington, D.C. Our experience includes office buildings, medical offices, professional office space, office condominiums, flex office properties, and office investment properties. Whether you are seeking to lease office space, renew an office lease, purchase an office building, sell an office property, or acquire an office investment, we provide practical advice, strong advocacy, and hands-on commercial real estate brokerage services tailored to your objectives.</p>
+          <p>The Langert Commercial Group has represented a wide range of office users, from small businesses and professional practices to regional and national companies. Evan's experience in commercial real estate brokerage (and prior experience in law and commercial real estate lending) provides clients with valuable insight into negotiations, lease structures, due diligence, financing considerations, and transaction strategy. Most importantly, clients work directly with an experienced commercial real estate broker who remains personally involved throughout the assignment, helping identify opportunities, solve problems, and maximize value from start to finish.</p>
+          <div class="ptags"><span>Multi-Tenant Buildings</span><span>Office Parks</span><span>Flex Space</span><span>Medical Office</span><span>Mixed-Use</span></div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Discuss Your Office Needs</span></a>
+        </div>
+      </div>
+      <div class="panel" id="retail">
+        <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="pcontent">
+          <div class="pnum">02</div>
+          <h3>From Mom-and-Pop to National Chains</h3>
+          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented retail and restaurant tenants, landlords, investors, franchisees, and owner-users in the leasing, acquisition, and disposition of retail properties throughout Maryland and Washington, D.C. Our experience includes shopping centers, neighborhood retail centers, freestanding retail buildings, restaurants, cafés, quick-service restaurants, specialty retail properties, and mixed-use projects. Whether you are seeking to lease retail space, identify a restaurant location, negotiate a retail lease, expand an existing business, purchase a retail property, sell a retail investment, or renew a lease, we provide practical advice, strong advocacy, and hands-on commercial real estate brokerage services tailored to your objectives.</p>
+          <p>The Langert Commercial Group has represented a wide range of retail and restaurant users, from local entrepreneurs and franchise operators to regional and national brands. Our experience includes retail leasing, restaurant site selection, retail tenant representation, shopping center leasing, and retail property sales involving Texas Roadhouse, Golden Corral, Starbucks, Chipotle, Popeyes, Qamaria Yemeni Coffee, The Chocolate House, The Board and Brew, GuateBakery, WaveMAX, Sweet Frog, and numerous other retail and restaurant concepts. Having previously owned both a restaurant franchise location and an independent retail business, Evan understands firsthand the challenges business owners face when selecting locations, negotiating leases, controlling occupancy costs, and growing their operations. Most importantly, clients work with an experienced commercial real estate broker who remains personally involved throughout the assignment, helping identify opportunities, solve problems, and maximize value from start to finish.</p>
+          <div class="ptags"><span>Site Selection</span><span>Restaurant Space</span><span>Multi-State Rollouts</span><span>Tenant Representation</span></div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Find Your Retail Space</span></a>
+        </div>
+      </div>
+      <div class="panel" id="industrial">
+        <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="pcontent">
+          <div class="pnum">03</div>
+          <h3>Distribution, Manufacturing &amp; Special-Needs Space</h3>
+          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented industrial and flex space tenants, landlords, investors, and owner-users in the leasing, acquisition, and disposition of industrial properties throughout Maryland and Washington, D.C. Our experience includes warehouse buildings, flex properties, office/warehouse facilities, distribution space, contractor facilities, service-oriented industrial properties, athletic training facilities, and owner-user industrial buildings. Whether you are seeking to lease warehouse space, acquire an industrial property, purchase an owner-user building, renew an industrial lease, expand your operations, or sell an industrial investment property, we provide practical advice, strong advocacy, and hands-on commercial real estate brokerage services tailored to your objectives.</p>
+          <p>The Langert Commercial Group has represented a diverse range of industrial and flex space users, including contractors, distributors, transportation companies, automotive businesses, churches, athletic training facilities, and service providers. Our experience includes industrial leasing, warehouse leasing, flex space leasing, industrial property sales, and owner-user acquisitions involving companies such as Maryland Twisters, Freestate Ambulance, Forever Home Mobility, Construction Heroes, Signarama, Life Church Online, VMW Freight Express, and numerous other industrial and flex users. Notable assignments include Maryland Twisters' approximately 31,000-square-foot athletic training facility and numerous office/warehouse and flex space transactions throughout the region. Evan's experience in commercial real estate brokerage (and prior experience in law and commercial real estate lending) provides clients with valuable insight into negotiations, due diligence, financing considerations, and transaction strategy. Prior to entering brokerage, Evan's commercial real estate legal experience included industrial and warehouse transactions involving companies such as FedEx, J.I. Case/Caterpillar, and Clear Channel Communications. Most importantly, clients work directly with an experienced commercial real estate broker who remains personally involved throughout the assignment, helping identify opportunities, solve problems, and maximize value from start to finish.</p>
+          <div class="ptags"><span>Warehouse</span><span>Manufacturing</span><span>Cold Storage</span><span>Data Centers</span><span>Flex Space</span></div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Explore Industrial Options</span></a>
+        </div>
+      </div>
+      <div class="panel" id="multifamily">
+        <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="pcontent">
+          <div class="pnum">04</div>
+          <h3>From 4 Units to Several Hundred</h3>
+          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented multifamily property owners, investors, buyers, and sellers in the acquisition, disposition, and valuation of multifamily real estate throughout Maryland, Washington, D.C., and beyond (including a multifamily portfolio acquisition in upstate New York). Our experience includes apartment buildings, mixed-use properties with residential components, and other multifamily real estate investments. Whether you are seeking to acquire an investment property, sell an asset, evaluate a property's value, complete a 1031 exchange, or expand your real estate portfolio, we provide practical advice, strong advocacy, and hands-on commercial real estate brokerage services tailored to your objectives.</p>
+          <p>The Langert Commercial Group understands that successful multifamily investing requires more than simply buying and selling properties. Investors must evaluate rental income, operating expenses, capital improvement needs, financing options, cap rates, cash flow, and long-term appreciation potential. Evan's experience in commercial real estate brokerage (and prior experience in law and commercial real estate lending) provides clients with valuable insight into investment analysis, due diligence, negotiations, financing considerations, and transaction strategy. Most importantly, clients work directly with an experienced commercial real estate broker who remains personally involved throughout the assignment, helping identify opportunities, solve problems, and maximize value from start to finish.</p>
+          <div class="ptags"><span>Acquisitions</span><span>Dispositions</span><span>Asset Valuation</span><span>EB-5 Financing</span><span>New Development</span></div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Grow Your Portfolio</span></a>
+        </div>
+      </div>
+      <div class="panel" id="land">
+        <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="pcontent">
+          <div class="pnum">05</div>
+          <h3>Positioning Sites for Their Highest &amp; Best Use</h3>
+          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented landowners, investors, developers, builders, nonprofits, and owner-users in the acquisition, disposition, and valuation of land throughout Maryland and Washington, D.C. Our experience includes development sites, commercial land, infill properties, redevelopment opportunities, excess land, and land suitable for office, retail, industrial, multifamily, institutional, and mixed-use projects. Whether you are seeking to purchase land for future development, sell a land asset, evaluate a property's value, or explore redevelopment opportunities, we provide practical advice, strong advocacy, and hands-on commercial real estate brokerage services tailored to your objectives.</p>
+          <p>Successful land transactions require more than simply identifying a buyer or seller. Zoning, permitted uses, access, utilities, environmental considerations, development potential, market demand, and governmental approvals can all have a significant impact on value. Evan's experience in commercial real estate brokerage (and prior experience in law and commercial real estate lending) provides clients with valuable insight into due diligence, negotiations, entitlement considerations, transaction structure, and development-related issues. Most importantly, clients work directly with an experienced commercial real estate broker who remains personally involved throughout the assignment, helping identify opportunities, solve problems, and maximize value from start to finish.</p>
+          <div class="ptags"><span>Raw Land</span><span>Infill Sites</span><span>Zoning &amp; Entitlements</span><span>Feasibility Analysis</span><span>Redevelopment</span></div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Discuss a Development Site</span></a>
+        </div>
+      </div>
+      <div class="panel" id="churches">
+        <div class="pbg" style="background-image:url('https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fit=crop&w=1600&q=80')"></div>
+        <div class="pcontent">
+          <div class="pnum">06</div>
+          <h3>Faith Facilities &amp; Houses of Worship</h3>
+          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented churches, ministries, religious organizations, nonprofits, buyers, and sellers in the acquisition, disposition, valuation, and leasing of church and other properties throughout Maryland and Washington, D.C. Our experience includes church buildings, sanctuaries, worship facilities, church-owned real estate, and redevelopment opportunities involving religious properties. Whether you are seeking to purchase a church property, sell a church building, evaluate a property's value, lease space, or explore redevelopment alternatives, we provide practical advice, strong advocacy, and hands-on commercial real estate brokerage services tailored to your objectives.</p>
+          <p>The Langert Commercial Group has represented churches and religious organizations in a variety of transactions, including assignments involving Faith Baptist Church in Glen Burnie, Grace Chinese Christian Church in Elkridge, Arundel Christian Church in Glen Burnie, and the prominent Bethesda Church property at 5144 Massachusetts Avenue in Bethesda, Maryland.</p>
+          <p>Church real estate presents unique challenges involving zoning, parking requirements, nonprofit governance, redevelopment potential, and balancing financial considerations with ministry objectives. In addition to representing churches and religious organizations in commercial real estate transactions, Evan is a Bible school graduate, has served as a praise and worship leader for more than 25 years, and previously led a musical outreach ministry that ministered in prisons and drug and alcohol rehabilitation facilities for more than a decade. Most importantly, clients work directly with an experienced commercial real estate broker who remains personally involved throughout the assignment, helping identify opportunities, solve problems, and maximize value from start to finish.</p>
+          <div class="ptags"><span>Church Sales &amp; Acquisitions</span><span>Congregation Relocation</span><span>Special-Purpose Valuation</span><span>Qualified Buyer Outreach</span><span>Zoning &amp; Repurposing</span></div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Discuss a Faith Property</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LISTINGS ============ -->
+<section class="listings pad" id="listings">
+  <div class="wrap">
+    <div class="shead center r">
+      <span class="sidx">03 — Featured Listings</span>
+      <h2>Featured Listings</h2>
+      <p>A selection of the commercial properties we're currently representing across Maryland and the Washington, D.C. corridor.</p>
+    </div>
+    <div class="lgrid">
+      <!-- ===== LISTING 1 ===== Replace image, status, tag, title, address, specs, link for each property -->
+      <div class="lcard r">
+        <div class="limg"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')"></div><span class="lstatus">For Sale</span><span class="ltag">Special Purpose</span></div>
+        <div class="lbody">
+          <h3>5144 Massachusetts Ave</h3>
+          <div class="laddr">Bethesda, MD 20816</div>
+          <div class="lspecs"><div class="sp"><div class="sv">28,700 SF</div><div class="sl">Building Size</div></div><div class="sp"><div class="sv">$15M</div><div class="sl">Asking Price</div></div></div>
+          <div class="lcta"><a href="#contact" class="llink" data-cursor>Request Details <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+      <!-- ===== LISTING 2 ===== -->
+      <div class="lcard r" style="--d:.12s">
+        <div class="limg"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80')"></div><span class="lstatus">For Lease</span><span class="ltag">Retail</span></div>
+        <div class="lbody">
+          <h3>Property Name / Headline</h3>
+          <div class="laddr">Street Address, City, MD</div>
+          <div class="lspecs"><div class="sp"><div class="sv">— SF</div><div class="sl">Available</div></div><div class="sp"><div class="sv">$—</div><div class="sl">Rate / PSF</div></div></div>
+          <div class="lcta"><a href="#contact" class="llink" data-cursor>Request Details <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+      <!-- ===== LISTING 3 ===== -->
+      <div class="lcard r" style="--d:.24s">
+        <div class="limg"><div class="bg" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=80')"></div><span class="lstatus">For Lease</span><span class="ltag">Industrial</span></div>
+        <div class="lbody">
+          <h3>Property Name / Headline</h3>
+          <div class="laddr">Street Address, City, MD</div>
+          <div class="lspecs"><div class="sp"><div class="sv">— SF</div><div class="sl">Available</div></div><div class="sp"><div class="sv">$—</div><div class="sl">Rate / PSF</div></div></div>
+          <div class="lcta"><a href="#contact" class="llink" data-cursor>Request Details <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="center r" style="margin-top:50px"><a href="#contact" class="btn btn-dark magnetic" data-cursor><span>Inquire About a Property</span></a></div>
+  </div>
+</section>
+
+<!-- ============ STATS ============ -->
+<section class="stats pad">
+  <div class="wrap sgrid">
+    <div class="stat r"><div class="n" data-target="50" data-suffix="+">0</div><div class="l">Years of Combined Experience</div></div>
+    <div class="stat r" style="--d:.1s"><div class="n" data-target="500" data-suffix="+">0</div><div class="l">Transactions Closed</div></div>
+    <div class="stat r" style="--d:.2s"><div class="n" data-prefix="$" data-target="400" data-suffix="M+">0</div><div class="l">In Total Deal Value</div></div>
+    <div class="stat r" style="--d:.3s"><div class="n" data-target="5">0</div><div class="l">Asset Classes Covered</div></div>
+  </div>
+</section>
+
+<!-- ============ INSIGHTS ============ -->
+<section class="videos pad" id="insights">
+  <div class="wrap">
+    <div class="shead center r">
+      <span class="sidx">04 — Insights</span>
+      <h2>Insights &amp; Perspectives</h2>
+      <p>Market commentary, deal breakdowns, and real client outcomes — straight from our team.</p>
+    </div>
+    <div class="center r" style="margin-bottom:16px"><span class="sidx">Video Library</span></div>
+    <div class="vgrid">
+      <!-- ===== VIDEO 1 ===== To embed: delete the <div class="vph">...</div> line and uncomment the <iframe>, replacing YOUR_VIDEO_ID -->
+      <div class="vcard r">
+        <div class="vframe">
+          <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="The Langert Group" allowfullscreen></iframe> -->
+          <div class="vph" data-cursor><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><span>Add YouTube Video</span></div>
+        </div>
+        <div class="vinfo"><h3>Video Title One</h3><p>Add a short description of what this video covers.</p></div>
+      </div>
+      <!-- ===== VIDEO 2 ===== -->
+      <div class="vcard r" style="--d:.12s">
+        <div class="vframe">
+          <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="The Langert Group" allowfullscreen></iframe> -->
+          <div class="vph" data-cursor><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><span>Add YouTube Video</span></div>
+        </div>
+        <div class="vinfo"><h3>Video Title Two</h3><p>Add a short description of what this video covers.</p></div>
+      </div>
+      <!-- ===== VIDEO 3 ===== -->
+      <div class="vcard r" style="--d:.24s">
+        <div class="vframe">
+          <!-- <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="The Langert Group" allowfullscreen></iframe> -->
+          <div class="vph" data-cursor><div class="play"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><span>Add YouTube Video</span></div>
+        </div>
+        <div class="vinfo"><h3>Video Title Three</h3><p>Add a short description of what this video covers.</p></div>
+      </div>
+    </div>
+    <div class="center r" style="margin-top:22px"><a href="https://www.youtube.com/@marylandcommercialrealesta8524" target="_blank" rel="noopener" class="btn btn-dark magnetic" data-cursor><span>Visit Our YouTube Channel</span></a></div>
+
+    <div class="center r" style="margin-top:40px;margin-bottom:20px"><span class="sidx">Case Studies</span></div>
+    <div class="cgrid">
+      <!-- ===== CASE STUDY 1 ===== Replace image, category, title, summary, link -->
+      <div class="ccard r">
+        <div class="cbg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80')"></div>
+        <span class="ccat">Retail &amp; Restaurant</span>
+        <div class="cbody"><h3>Case Study Title One</h3><p>Add a brief summary of the challenge, the strategy you used, and the outcome for the client.</p><a href="#" class="clink" data-cursor>Read Case Study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+      <!-- ===== CASE STUDY 2 ===== -->
+      <div class="ccard r" style="--d:.12s">
+        <div class="cbg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')"></div>
+        <span class="ccat">Office</span>
+        <div class="cbody"><h3>Case Study Title Two</h3><p>Add a brief summary of the challenge, the strategy you used, and the outcome for the client.</p><a href="#" class="clink" data-cursor>Read Case Study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+      <!-- ===== CASE STUDY 3 ===== -->
+      <div class="ccard r" style="--d:.24s">
+        <div class="cbg" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=80')"></div>
+        <span class="ccat">Industrial &amp; Flex</span>
+        <div class="cbody"><h3>Case Study Title Three</h3><p>Add a brief summary of the challenge, the strategy you used, and the outcome for the client.</p><a href="#" class="clink" data-cursor>Read Case Study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REVIEWS ============ -->
+<style>
+  .reviews{background:var(--paper)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:14px}
+  .rcard{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 22px;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease)}
+  .rcard:hover{transform:translateY(-8px);box-shadow:var(--shadow)}
+  .rquote{font-family:var(--serif);font-size:4rem;line-height:.5;color:var(--blue);height:34px}
+  .rstars{font-size:1rem;letter-spacing:3px;color:var(--blue-3);margin-bottom:18px}
+  .rtext{font-size:1.04rem;color:var(--ink);line-height:1.6;font-weight:300;flex:1;margin-bottom:26px}
+  .rwho{display:flex;align-items:center;gap:14px;border-top:1px solid var(--line);padding-top:22px}
+  .ravatar{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,var(--blue),var(--slate));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--serif);font-size:1.3rem;flex-shrink:0}
+  .rname{font-family:var(--sans);font-weight:700;font-size:.96rem;color:var(--ink)}
+  .rrole{font-size:.82rem;color:var(--muted)}
+  @media(max-width:1000px){.rgrid{grid-template-columns:1fr 1fr}}
+  @media(max-width:760px){.rgrid{grid-template-columns:1fr}}
+</style>
+<section class="reviews pad" id="reviews">
+  <div class="wrap">
+    <div class="shead center r">
+      <span class="sidx">05 — Reviews</span>
+      <h2>What Our Clients Say</h2>
+      <p>Don't just take our word for it — hear from the owners, investors, and businesses we've represented.</p>
+    </div>
+    <div class="rgrid">
+      <!-- ===== REVIEW 1 ===== Replace the quote, name, role, and avatar initial -->
+      <div class="rcard r">
+        <div class="rquote">&ldquo;</div>
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rtext">Add a client testimonial here — a few sentences on the experience of working with The Langert Group and the result you delivered.</p>
+        <div class="rwho"><div class="ravatar">A</div><div><div class="rname">Client Name</div><div class="rrole">Title, Company</div></div></div>
+      </div>
+      <!-- ===== REVIEW 2 ===== -->
+      <div class="rcard r" style="--d:.12s">
+        <div class="rquote">&ldquo;</div>
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rtext">Add a client testimonial here — a few sentences on the experience of working with The Langert Group and the result you delivered.</p>
+        <div class="rwho"><div class="ravatar">B</div><div><div class="rname">Client Name</div><div class="rrole">Title, Company</div></div></div>
+      </div>
+      <!-- ===== REVIEW 3 ===== -->
+      <div class="rcard r" style="--d:.24s">
+        <div class="rquote">&ldquo;</div>
+        <div class="rstars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="rtext">Add a client testimonial here — a few sentences on the experience of working with The Langert Group and the result you delivered.</p>
+        <div class="rwho"><div class="ravatar">C</div><div><div class="rname">Client Name</div><div class="rrole">Title, Company</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CTA ============ -->
+<style>
+  .cta-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:center;text-align:left}
+  .cta-grid .eyebrow{justify-content:flex-start}
+  .cta-grid .eyebrow::before{background:var(--blue-2)}
+  .cta-grid h2{font-size:clamp(1.6rem,3vw,2.6rem);margin:12px 0 14px}
+  .cta-grid p{font-size:.98rem;margin-bottom:22px}
+  .cta-links{display:flex;flex-direction:column;gap:10px}
+  .cta-links a{display:flex;align-items:center;gap:9px;color:rgba(255,255,255,.8);font-size:.95rem;font-weight:500;transition:color .2s}
+  .cta-links a:hover{color:var(--blue-2)}
+  .cform{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:32px;backdrop-filter:blur(10px)}
+  .cform h3{font-family:var(--serif);font-size:1.3rem;color:#fff;margin-bottom:20px;font-weight:400}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .fgroup{display:flex;flex-direction:column;gap:6px;margin-bottom:14px}
+  .fgroup label{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:600}
+  .fgroup input,.fgroup select,.fgroup textarea{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:8px;padding:11px 14px;color:#fff;font-family:var(--sans);font-size:.92rem;outline:none;transition:border-color .2s;width:100%}
+  .fgroup input::placeholder,.fgroup textarea::placeholder{color:rgba(255,255,255,.3)}
+  .fgroup input:focus,.fgroup select:focus,.fgroup textarea:focus{border-color:var(--blue-2)}
+  .fgroup select option{background:var(--dark);color:#fff}
+  .fgroup textarea{resize:vertical;min-height:80px}
+  .fsubmit{width:100%;margin-top:4px}
+  .fsuccess{display:none;text-align:center;padding:18px;color:var(--blue-2);font-family:var(--serif);font-size:1.1rem}
+  @media(max-width:900px){.cta-grid{grid-template-columns:1fr;gap:36px}.frow{grid-template-columns:1fr}}
+</style>
+<section class="cta pad" id="contact">
+  <div class="wrap cta-inner r">
+    <div class="cta-grid">
+      <div>
+        <span class="eyebrow light">Let's Talk</span>
+        <h2>Planning to acquire, sell, or lease — or looking to <em>grow your investments?</em></h2>
+        <p>Reach out for a confidential consultation. We work directly with you from start to finish.</p>
+        <div class="cta-links">
+          <a href="tel:4435290505"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (443) 529-0505</a>
+          <a href="mailto:elangert@thelangertgroup.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> elangert@thelangertgroup.com</a>
+          <a href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> 10015 Old Columbia Road, Columbia, MD 21045</a>
+        </div>
+      </div>
+      <div class="cform">
+        <h3>Request a Consultation</h3>
+        <form id="consultForm" onsubmit="handleConsult(event)">
+          <div class="frow">
+            <div class="fgroup"><label>First Name</label><input type="text" name="fname" placeholder="John" required></div>
+            <div class="fgroup"><label>Last Name</label><input type="text" name="lname" placeholder="Smith" required></div>
+          </div>
+          <div class="frow">
+            <div class="fgroup"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required></div>
+            <div class="fgroup"><label>Phone</label><input type="tel" name="phone" placeholder="(443) 000-0000"></div>
+          </div>
+          <div class="fgroup">
+            <label>I'm interested in</label>
+            <select name="interest">
+              <option value="">Select a service…</option>
+              <option>Office</option>
+              <option>Retail &amp; Restaurant</option>
+              <option>Industrial &amp; Flex</option>
+              <option>Multi-Family</option>
+              <option>Land &amp; Development</option>
+              <option>Churches / Houses of Worship</option>
+              <option>Other / Not Sure</option>
+            </select>
+          </div>
+          <div class="fgroup"><label>Message</label><textarea name="message" placeholder="Tell us a bit about what you're looking for…"></textarea></div>
+          <button type="submit" class="btn btn-blue magnetic fsubmit" data-cursor><span>Send Request</span></button>
+        </form>
+        <div class="fsuccess" id="formSuccess">Thank you — we'll be in touch shortly.</div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  function handleConsult(e){
+    e.preventDefault();
+    document.getElementById('consultForm').style.display='none';
+    document.getElementById('formSuccess').style.display='block';
+  }
+</script>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="fgrid">
+      <div class="fcol flogo">
+        <span class="logomark"><span class="lm-blue"></span><span class="lm-dark"></span></span>
+        <span class="mark" style="display:block;margin-top:14px">The Langert Group</span>
+        <span class="sub">Signature Commercial Real Estate Services</span>
+        <p style="margin-top:18px">10015 Old Columbia Road<br>Columbia, MD 21045</p>
+        <div class="fsocial">
+          <a href="https://www.facebook.com/EvanLangertCRE/" data-cursor aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.linkedin.com/company/the-langert-commercial-group/" data-cursor aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+          <a href="https://www.youtube.com/@marylandcommercialrealesta8524" data-cursor aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7a3 3 0 0 0-2-2c-2-.5-9-.5-9-.5s-7 0-9 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 10 3 3 0 0 0 2 2c2 .5 9 .5 9 .5s7 0 9-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-10zM10 15V9l5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="fcol">
+        <h4>Specialties</h4>
+        <a href="#specialties">Office</a><a href="#specialties">Retail &amp; Restaurant</a><a href="#specialties">Industrial &amp; Flex</a><a href="#specialties">Multi-Family</a><a href="#specialties">Land &amp; Development</a>
+      </div>
+      <div class="fcol">
+        <h4>Company</h4>
+        <a href="#listings">Featured Listings</a><a href="#about">About Us</a><a href="#insights">Insights</a><a href="#reviews">Reviews</a><a href="#contact">Contact</a>
+      </div>
+      <div class="fcol">
+        <h4>Contact</h4>
+        <p>Office: <a href="tel:4435290505" style="display:inline">(443) 529-0505</a></p>
+        <p>Direct: (650) 714-3826</p>
+        <p><a href="mailto:elangert@thelangertgroup.com" style="display:inline">elangert@thelangertgroup.com</a></p>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 The Langert Commercial Group, Inc. — All Rights Reserved</span>
+      <span><a href="#">Accessibility</a> &nbsp;|&nbsp; <a href="#">Privacy Policy</a> &nbsp;|&nbsp; <a href="#">DMCA Notice</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.documentElement.classList.add('js');
+  const rm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- scroll progress + nav ----
+  const header=document.getElementById('header'),progress=document.getElementById('progress');
+  function onScroll(){
+    const st=window.scrollY;
+    header.classList.toggle('scrolled',st>40);
+    const h=document.documentElement.scrollHeight-window.innerHeight;
+    progress.style.width=(h>0?(st/h)*100:0)+'%';
+    // hero parallax
+    if(!rm&&hm){hm.style.transform='translateY('+st*0.25+'px)';}
+  }
+  const hm=document.getElementById('heroMedia');
+  window.addEventListener('scroll',onScroll,{passive:true});
+
+  // ---- mobile menu ----
+  const ham=document.getElementById('ham'),menu=document.getElementById('menu');
+  ham.addEventListener('click',()=>{ham.classList.toggle('open');menu.classList.toggle('open');});
+  menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');menu.classList.remove('open');}));
+
+  // ---- tabs ----
+  document.querySelector('.tabbar').addEventListener('click',e=>{
+    const b=e.target.closest('.tabbtn'); if(!b) return;
+    document.querySelectorAll('.tabbtn').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.tab).classList.add('active');
+  });
+
+  // ---- reveal on scroll ----
+  const io=new IntersectionObserver((es)=>{es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('show');io.unobserve(en.target);}});},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.r').forEach(el=>io.observe(el));
+
+  // ---- count up ----
+  const counted=new WeakSet();
+  const cio=new IntersectionObserver((es)=>{es.forEach(en=>{
+    if(en.isIntersecting&&!counted.has(en.target)){counted.add(en.target);countUp(en.target);cio.unobserve(en.target);}
+  });},{threshold:.5});
+  document.querySelectorAll('.n[data-target]').forEach(el=>cio.observe(el));
+  function countUp(el){
+    const t=+el.dataset.target,pre=el.dataset.prefix||'',suf=el.dataset.suffix||'';
+    if(rm){el.textContent=pre+t+suf;return;}
+    const dur=1600,t0=performance.now();
+    function step(now){
+      const p=Math.min((now-t0)/dur,1),e=1-Math.pow(1-p,3);
+      el.textContent=pre+Math.round(t*e)+suf;
+      if(p<1)requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  // ---- custom cursor + magnetic + tilt (fine pointer only) ----
+  if(window.matchMedia('(pointer:fine)').matches && !rm){
+    document.body.classList.add('cursor-on');
+    const cur=document.getElementById('cursor'),dot=document.getElementById('cursorDot');
+    let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+    addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dot.style.transform='translate('+mx+'px,'+my+'px) translate(-50%,-50%)';});
+    (function loop(){cx+=(mx-cx)*.18;cy+=(my-cy)*.18;cur.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';requestAnimationFrame(loop);})();
+    document.querySelectorAll('[data-cursor]').forEach(el=>{
+      el.addEventListener('mouseenter',()=>cur.classList.add('grow'));
+      el.addEventListener('mouseleave',()=>cur.classList.remove('grow'));
+    });
+    // magnetic buttons
+    document.querySelectorAll('.magnetic').forEach(el=>{
+      el.addEventListener('mousemove',e=>{const r=el.getBoundingClientRect();const x=e.clientX-r.left-r.width/2,y=e.clientY-r.top-r.height/2;el.style.transform='translate('+x*.25+'px,'+y*.35+'px)';});
+      el.addEventListener('mouseleave',()=>{el.style.transform='';});
+    });
+    // subtle photo tilt
+    const ef=document.getElementById('evanFrame');
+    if(ef){const wrap=ef.closest('.evan-photo');wrap.addEventListener('mousemove',e=>{const r=wrap.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ef.style.transform='perspective(900px) rotateY('+x*6+'deg) rotateX('+(-y*6)+'deg)';});wrap.addEventListener('mouseleave',()=>{ef.style.transform='';});}
+  }
+</script>
+</body>
+</html>
