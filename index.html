@@ -6,7 +6,7 @@
 <title>The Langert Commercial Group | Commercial Real Estate Brokers — MD & DC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..600&family=Inter:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
     --bg:#ffffff;
@@ -66,7 +66,7 @@
   .logo .mark{font-family:var(--serif);font-size:1.4rem;font-weight:500;color:#fff;letter-spacing:0}
   .logo .sub{font-family:var(--serif);font-style:italic;font-size:.64rem;letter-spacing:.02em;color:var(--blue-2);margin-top:3px}
   .menu{display:flex;align-items:center;gap:34px;list-style:none}
-  .menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0}
+  .menu a{color:rgba(255,255,255,.82);font-size:.9rem;font-weight:500;position:relative;padding:4px 0;font-family:'Cinzel',var(--sans);letter-spacing:.02em}
   .menu a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:1.5px;background:var(--blue-2);transition:width .3s var(--ease)}
   .menu a:hover{color:#fff}
   .menu a:hover::after{width:100%}
@@ -105,10 +105,10 @@
   .hero-glow{position:absolute;z-index:1;width:55vw;height:55vw;right:-10vw;top:-10vw;background:radial-gradient(circle,rgba(126,153,209,.4),transparent 62%);filter:blur(40px);animation:float 14s ease-in-out infinite}
   @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,5%) scale(1.08)}}
   .hero-inner{position:relative;z-index:3;width:100%;padding-top:60px}
-  .hero h1{font-size:clamp(2rem,4.5vw,3.6rem);margin:14px 0 16px;letter-spacing:-.035em;font-weight:400}
+  .hero h1{font-size:clamp(3rem,6.5vw,5.4rem);margin:18px 0 22px;letter-spacing:-.035em;font-weight:400}
   .hero h1 .l2{display:block}
   .hero h1 em{font-style:italic;color:var(--blue-2);font-weight:300}
-  .hero p{font-size:clamp(.95rem,1.2vw,1.05rem);color:rgba(255,255,255,.8);max-width:580px;margin-bottom:24px;font-weight:300}
+  .hero p{font-size:clamp(1.05rem,1.4vw,1.2rem);color:rgba(255,255,255,.8);max-width:580px;margin-bottom:28px;font-weight:300}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-cta .btn{padding:13px 26px}
   /* hero entrance */
@@ -188,10 +188,10 @@
   .evan-badge .bn{font-family:var(--serif);font-size:1.9rem;color:var(--blue-2);line-height:1;font-weight:500}
   .evan-badge .bl{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:5px}
   .evan-name{display:flex;align-items:center;gap:16px;margin:18px 0 6px;flex-wrap:wrap}
-  .evan-name h2{font-size:clamp(2rem,3.6vw,2.9rem);color:#fff;font-weight:400}
+  .evan-name h2{font-size:clamp(2.4rem,4vw,3.4rem);color:#fff;font-weight:400}
   .evan-name .esq{font-family:var(--sans);font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-2);border:1px solid rgba(167,188,226,.5);padding:6px 11px;border-radius:100px;white-space:nowrap}
   .evan-role{font-family:var(--sans);font-size:.92rem;color:rgba(255,255,255,.6);font-weight:500;letter-spacing:.04em;margin-bottom:26px}
-  .evan p{color:rgba(255,255,255,.78);font-size:.9rem;margin-bottom:10px;font-weight:300}
+  .evan p{color:rgba(255,255,255,.78);font-size:1rem;margin-bottom:14px;font-weight:300}
   .evan p.lead{font-size:clamp(1rem,1.4vw,1.2rem);color:#fff;line-height:1.4;font-family:var(--serif);font-weight:300}
   .evan p.lead b{color:var(--blue-2);font-weight:400;font-style:italic}
   .evan .disc{font-size:.82rem;color:rgba(255,255,255,.5);font-style:italic;border-left:2px solid var(--blue);padding:10px 18px;margin-top:24px;line-height:1.55}
@@ -559,24 +559,24 @@
     <div class="center r" style="margin-top:22px"><a href="https://www.youtube.com/@thelangertcommercialgroup" target="_blank" rel="noopener" class="btn btn-dark magnetic" data-cursor><span>Visit Our YouTube Channel</span></a></div>
 
     <div class="center r" style="margin-top:40px;margin-bottom:20px"><span class="sidx">Case Studies</span></div>
-    <div class="cgrid">
-      <!-- ===== CASE STUDY 1 ===== Replace image, category, title, summary, link -->
-      <div class="ccard r">
-        <div class="cbg" style="background-image:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=900&q=80')"></div>
-        <span class="ccat">Retail &amp; Restaurant</span>
-        <div class="cbody"><h3>Case Study Title One</h3><p>Add a brief summary of the challenge, the strategy you used, and the outcome for the client.</p><a href="#" class="clink" data-cursor>Read Case Study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <!-- Case Study: Pizza Movers -->
+    <div class="r" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1.2fr;min-height:360px">
+      <div style="position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=900&q=80');background-size:cover;background-position:center"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,12,.5),rgba(7,8,12,.1))"></div>
+        <span style="position:absolute;top:22px;left:22px;background:var(--blue);color:var(--ink);font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:6px 13px;border-radius:100px;z-index:2">Retail &amp; Restaurant</span>
       </div>
-      <!-- ===== CASE STUDY 2 ===== -->
-      <div class="ccard r" style="--d:.12s">
-        <div class="cbg" style="background-image:url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80')"></div>
-        <span class="ccat">Office</span>
-        <div class="cbody"><h3>Case Study Title Two</h3><p>Add a brief summary of the challenge, the strategy you used, and the outcome for the client.</p><a href="#" class="clink" data-cursor>Read Case Study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
-      </div>
-      <!-- ===== CASE STUDY 3 ===== -->
-      <div class="ccard r" style="--d:.24s">
-        <div class="cbg" style="background-image:url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fit=crop&w=900&q=80')"></div>
-        <span class="ccat">Industrial &amp; Flex</span>
-        <div class="cbody"><h3>Case Study Title Three</h3><p>Add a brief summary of the challenge, the strategy you used, and the outcome for the client.</p><a href="#" class="clink" data-cursor>Read Case Study <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+      <div style="background:var(--dark);padding:40px;display:flex;flex-direction:column;justify-content:center">
+        <p style="font-family:var(--sans);font-size:.72rem;letter-spacing:.2em;color:var(--blue-2);font-weight:700;text-transform:uppercase;margin-bottom:12px">Owner's Perspective</p>
+        <h3 style="font-family:var(--serif);font-size:clamp(1.3rem,2.2vw,1.8rem);color:#fff;font-weight:400;line-height:1.2;margin-bottom:18px">What Owning a Pizza Franchise Taught Me About Restaurants &amp; Real Estate</h3>
+        <p style="font-size:.92rem;color:rgba(255,255,255,.78);line-height:1.65;margin-bottom:22px;font-weight:300">Before representing restaurant owners, Evan Langert was one. Approximately 40 years ago, he and his partner purchased a Pizza Movers franchise in Takoma Park, Maryland. Over roughly two years of hands-on ownership, Evan learned firsthand what brokers who have never run a restaurant simply cannot know: the pressure of thin margins, the reality of employee theft, the chaos of staffing shortfalls, supplier problems, and the sudden threat of a competitor opening nearby. Most restaurant brokers have never owned a restaurant. Evan has — and that distinction shapes every conversation he has with restaurant clients today.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px">
+          <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:100px;font-size:.72rem;color:rgba(255,255,255,.7);font-weight:500">Food &amp; Labor Cost Control</span>
+          <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:100px;font-size:.72rem;color:rgba(255,255,255,.7);font-weight:500">Staffing &amp; Operations</span>
+          <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:100px;font-size:.72rem;color:rgba(255,255,255,.7);font-weight:500">Site Selection &amp; Parking</span>
+          <span style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:5px 12px;border-radius:100px;font-size:.72rem;color:rgba(255,255,255,.7);font-weight:500">Competitive Market Dynamics</span>
+        </div>
+        <a href="#contact" class="clink" data-cursor style="color:var(--blue-2)">Discuss Your Restaurant Needs <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
     </div>
   </div>
