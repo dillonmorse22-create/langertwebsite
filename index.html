@@ -354,6 +354,8 @@
     .lgrid,.vgrid,.cgrid{grid-template-columns:1fr}
     .sgrid{grid-template-columns:1fr 1fr}
     .nav-right .btn{display:none}
+    .stack-m{grid-template-columns:1fr!important}
+    .stack-m>div:first-child{min-height:220px}
   }
   @media(max-width:480px){.fgrid{grid-template-columns:1fr}.sgrid{grid-template-columns:1fr}.hero-cta .btn{width:100%}}
 
@@ -556,7 +558,7 @@
       <p>A selection of the commercial properties we're currently representing across Maryland and the Washington, D.C. corridor.</p>
     </div>
     <div style="max-width:820px;margin:0 auto">
-      <div class="lcard r" style="display:grid;grid-template-columns:1fr 1fr">
+      <div class="lcard r stack-m" style="display:grid;grid-template-columns:1fr 1fr">
         <div class="limg" style="aspect-ratio:unset;min-height:320px"><div class="bg" data-bg="url('https://images1.loopnet.com/i2/xo0MnVvP-b2bLsivlslGHIqhq9uwnwD8JnY5s092tCM/112/5144-Massachusetts-Ave-Bethesda-MD-Primary-Photo-1-HighDefinition.jpg')"></div><span class="lstatus">For Sale</span><span class="ltag">Special Purpose</span></div>
         <div class="lbody" style="padding:32px">
           <h3 style="font-size:1.6rem">5144 Massachusetts Ave</h3>
@@ -623,7 +625,7 @@
 
     <div class="center r" style="margin-top:40px;margin-bottom:20px"><span class="sidx">Case Studies</span></div>
     <!-- Case Study: Pizza Movers -->
-    <div class="r" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1.2fr;min-height:360px">
+    <div class="r stack-m" style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);display:grid;grid-template-columns:1fr 1.2fr;min-height:360px">
       <div style="position:relative;overflow:hidden">
         <div style="position:absolute;inset:0;background-size:cover;background-position:center" data-bg="url('https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fm=webp&fit=crop&w=900&q=80')"></div>
         <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,12,.5),rgba(7,8,12,.1))"></div>
