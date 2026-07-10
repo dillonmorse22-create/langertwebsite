@@ -1,0 +1,62 @@
+[
+  {
+    "id": "office",
+    "label": "Office",
+    "num": "01",
+    "heading": "Landlord & Tenant Representation",
+    "image": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fm=webp&fit=crop&w=1600&q=80",
+    "body": "For more than 20 years, Evan Langert and The Langert Commercial Group have represented office tenants, landlords, investors, and owner-users in the leasing, acquisition, and disposition of office properties throughout Maryland and Washington, D.C. — including office buildings, medical offices, professional office space, office condominiums, and office investments. Serving clients from small professional practices to regional and national companies, Evan draws on his background in brokerage, law, and commercial real estate lending to provide valuable insight into negotiations, lease structures, due diligence, and transaction strategy — and remains personally involved throughout every assignment from start to finish.",
+    "tags": ["Multi-Tenant Buildings", "Office Parks", "Flex Space", "Medical Office", "Mixed-Use"],
+    "cta": "Discuss Your Office Needs"
+  },
+  {
+    "id": "retail",
+    "label": "Retail & Restaurant",
+    "num": "02",
+    "heading": "From Mom-and-Pop to National Chains",
+    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fm=webp&fit=crop&w=1600&q=80",
+    "body": "For more than 20 years, Evan Langert and The Langert Commercial Group have represented retail and restaurant tenants, landlords, investors, and franchisees in the leasing, acquisition, and disposition of retail properties throughout Maryland and Washington, D.C. — from shopping centers and freestanding retail buildings to restaurants and mixed-use projects. Clients have ranged from local entrepreneurs to national brands including Texas Roadhouse, Golden Corral, Starbucks, Chipotle, and Popeyes. Having previously owned both a restaurant franchise and an independent retail business, Evan understands firsthand the challenges of selecting locations, negotiating leases, and controlling occupancy costs — and remains personally involved throughout every assignment.",
+    "tags": ["Site Selection", "Restaurant Space", "Multi-State Rollouts", "Tenant Representation"],
+    "cta": "Find Your Retail Space"
+  },
+  {
+    "id": "industrial",
+    "label": "Industrial & Flex",
+    "num": "03",
+    "heading": "Distribution, Manufacturing & Special-Needs Space",
+    "image": "https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fm=webp&fit=crop&w=1600&q=80",
+    "body": "For more than 20 years, Evan Langert and The Langert Commercial Group have represented industrial and flex space tenants, landlords, investors, and owner-users in the leasing, acquisition, and disposition of industrial properties throughout Maryland and Washington, D.C. — including warehouse, office/warehouse, distribution, contractor, and owner-user facilities. Clients have included contractors, distributors, transportation companies, and service providers such as Maryland Twisters (an approximately 31,000-square-foot athletic training facility), Freestate Ambulance, and Signarama. Evan's background in brokerage, law, and commercial real estate lending — including prior legal work on industrial transactions for FedEx and Clear Channel Communications — gives clients valuable insight into negotiations, due diligence, and transaction strategy, with Evan personally involved throughout every assignment.",
+    "tags": ["Warehouse", "Manufacturing", "Cold Storage", "Data Centers", "Flex Space"],
+    "cta": "Explore Industrial Options"
+  },
+  {
+    "id": "multifamily",
+    "label": "Multi-Family",
+    "num": "04",
+    "heading": "From 4 Units to Several Hundred",
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fm=webp&fit=crop&w=1600&q=80",
+    "body": "For more than 20 years, Evan Langert and The Langert Commercial Group have represented multifamily owners, investors, buyers, and sellers in the acquisition, disposition, and valuation of apartment buildings and mixed-use properties throughout Maryland, Washington, D.C., and beyond — including a multifamily portfolio acquisition in upstate New York. Successful multifamily investing requires evaluating rental income, operating expenses, cap rates, financing, and long-term appreciation, and Evan's background in brokerage, law, and commercial real estate lending gives clients valuable insight into investment analysis, due diligence, and transaction strategy — whether acquiring, selling, completing a 1031 exchange, or growing a portfolio.",
+    "tags": ["Acquisitions", "Dispositions", "Asset Valuation", "EB-5 Financing", "New Development"],
+    "cta": "Grow Your Portfolio"
+  },
+  {
+    "id": "land",
+    "label": "Land & Development",
+    "num": "05",
+    "heading": "Positioning Sites for Their Highest & Best Use",
+    "image": "https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fm=webp&fit=crop&w=1600&q=80",
+    "body": "For more than 20 years, Evan Langert and The Langert Commercial Group have represented landowners, investors, developers, builders, and nonprofits in the acquisition, disposition, and valuation of land throughout Maryland and Washington, D.C. — including development sites, infill properties, redevelopment opportunities, and land suited for office, retail, industrial, multifamily, and mixed-use projects. Because zoning, access, utilities, environmental considerations, and governmental approvals can all significantly impact value, Evan's background in brokerage, law, and commercial real estate lending gives clients valuable insight into due diligence, entitlements, and transaction structure — positioning every site for its highest and best use.",
+    "tags": ["Raw Land", "Infill Sites", "Zoning & Entitlements", "Feasibility Analysis", "Redevelopment"],
+    "cta": "Discuss a Development Site"
+  },
+  {
+    "id": "churches",
+    "label": "Churches / Houses of Worship",
+    "num": "06",
+    "heading": "Faith Facilities & Houses of Worship",
+    "image": "https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fm=webp&fit=crop&w=1600&q=80",
+    "body": "For more than 20 years, Evan Langert and The Langert Commercial Group have represented churches, ministries, and religious organizations in the acquisition, disposition, valuation, and leasing of worship facilities throughout Maryland and Washington, D.C. — including assignments for Faith Baptist Church, Grace Chinese Christian Church, Arundel Christian Church, and the prominent Bethesda Church property at 5144 Massachusetts Avenue. Church real estate presents unique challenges involving zoning, parking, nonprofit governance, and balancing financial considerations with ministry objectives — and Evan brings a rare personal understanding to this work as a Bible school graduate and praise and worship leader of more than 25 years.",
+    "tags": ["Church Sales & Acquisitions", "Congregation Relocation", "Special-Purpose Valuation", "Qualified Buyer Outreach", "Zoning & Repurposing"],
+    "cta": "Discuss a Faith Property"
+  }
+]

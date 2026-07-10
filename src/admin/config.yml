@@ -1,0 +1,139 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "src/uploads"
+public_folder: "/uploads"
+
+site_url: https://www.thelangertgroup.com
+display_url: https://www.thelangertgroup.com
+
+collections:
+  - name: "listings"
+    label: "Featured Listings"
+    files:
+      - name: "listings"
+        label: "Listings"
+        file: "src/_data/listings.json"
+        fields:
+          - label: "Listings"
+            name: "items"
+            widget: "list"
+            root: true
+            fields:
+              - { label: "Property Title", name: "title", widget: "string" }
+              - { label: "Address (City, State ZIP)", name: "address", widget: "string" }
+              - { label: "Status (e.g. For Sale)", name: "status", widget: "string" }
+              - { label: "Category Tag", name: "tag", widget: "string" }
+              - { label: "Photo URL", name: "photo", widget: "string" }
+              - label: "Key Specs"
+                name: "specs"
+                widget: "list"
+                fields:
+                  - { label: "Value (e.g. 28,700 SF)", name: "value", widget: "string" }
+                  - { label: "Label (e.g. Building Size)", name: "label", widget: "string" }
+              - label: "Highlight Pills"
+                name: "highlights"
+                widget: "list"
+                field: { label: "Highlight", name: "highlight", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "press"
+    label: "Press / Featured In"
+    files:
+      - name: "press"
+        label: "Articles"
+        file: "src/_data/press.json"
+        fields:
+          - label: "Articles"
+            name: "items"
+            widget: "list"
+            root: true
+            fields:
+              - { label: "Publication Name", name: "publication", widget: "string" }
+              - { label: "Date & Type (e.g. June 15, 2026 — Market Commentary)", name: "meta", widget: "string" }
+              - { label: "Article Title", name: "title", widget: "string" }
+              - { label: "Summary", name: "summary", widget: "text" }
+              - { label: "Article URL", name: "url", widget: "string" }
+
+  - name: "videos"
+    label: "Insight Videos"
+    files:
+      - name: "videos"
+        label: "Videos"
+        file: "src/_data/videos.json"
+        fields:
+          - label: "Videos"
+            name: "items"
+            widget: "list"
+            root: true
+            fields:
+              - { label: "YouTube Video ID (the part after watch?v=)", name: "youtube_id", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  - name: "bio"
+    label: "About / Bio"
+    files:
+      - name: "bio"
+        label: "Evan's Bio"
+        file: "src/_data/bio.json"
+        fields:
+          - { label: "Name", name: "name", widget: "string" }
+          - { label: "Credential Line", name: "credential", widget: "string" }
+          - { label: "Role / Title", name: "role", widget: "string" }
+          - { label: "Badge Number (e.g. 35+)", name: "badge_number", widget: "string" }
+          - { label: "Badge Label", name: "badge_label", widget: "string" }
+          - { label: "Photo URL", name: "photo", widget: "string" }
+          - label: "Bio Paragraphs"
+            name: "paragraphs"
+            widget: "list"
+            field: { label: "Paragraph", name: "paragraph", widget: "text" }
+          - { label: "Disclaimer", name: "disclaimer", widget: "text" }
+
+  - name: "services"
+    label: "Services"
+    files:
+      - name: "services"
+        label: "Service Tabs"
+        file: "src/_data/services.json"
+        fields:
+          - label: "Services"
+            name: "items"
+            widget: "list"
+            root: true
+            fields:
+              - { label: "ID (do not change)", name: "id", widget: "string" }
+              - { label: "Tab Label", name: "label", widget: "string" }
+              - { label: "Number (01-06)", name: "num", widget: "string" }
+              - { label: "Heading", name: "heading", widget: "string" }
+              - { label: "Background Image URL", name: "image", widget: "string" }
+              - { label: "Paragraph", name: "body", widget: "text" }
+              - label: "Tag Pills"
+                name: "tags"
+                widget: "list"
+                field: { label: "Tag", name: "tag", widget: "string" }
+              - { label: "Button Text", name: "cta", widget: "string" }
+
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - name: "settings"
+        label: "Contact Info & Stats"
+        file: "src/_data/settings.json"
+        fields:
+          - { label: "Office Phone (display)", name: "phone", widget: "string" }
+          - { label: "Office Phone (digits only, for links)", name: "phone_href", widget: "string" }
+          - { label: "Direct Phone", name: "direct_phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address Line 1", name: "address_line1", widget: "string" }
+          - { label: "Address Line 2", name: "address_line2", widget: "string" }
+          - { label: "Hero Eyebrow Text", name: "hero_eyebrow", widget: "string" }
+          - { label: "Hero Paragraph", name: "hero_paragraph", widget: "text" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Number", name: "number", widget: "number" }
+              - { label: "Suffix (e.g. +)", name: "suffix", widget: "string", required: false, default: "" }
+              - { label: "Label", name: "label", widget: "string" }

@@ -39,7 +39,7 @@
   "logo": "https://lirp.cdn-website.com/a8a63bb6/dms3rep/multi/opt/EKL+2026+Headshot-640w.jpeg",
   "description": "Strategic commercial real estate brokers and advisors serving Maryland and Washington, D.C. Specializing in office, retail, industrial, multifamily, land, and church properties.",
   "telephone": "+14435290505",
-  "email": "elangert@thelangertgroup.com",
+  "email": "{{ settings.email }}",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "10015 Old Columbia Road",
@@ -395,9 +395,9 @@
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
-      <a href="tel:4435290505" class="nav-phone" data-cursor>
+      <a href="tel:{{ settings.phone_href }}" class="nav-phone" data-cursor>
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        (443) 529-0505
+        {{ settings.phone }}
       </a>
       <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Request Consultation</span></a>
       <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -416,12 +416,12 @@
   <div class="hero-glow"></div>
   <div class="grain"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow light anim a1">Serving Maryland &amp; Washington, D.C.</span>
+    <span class="eyebrow light anim a1">{{ settings.hero_eyebrow }}</span>
     <h1 class="anim a2">Expert Guidance.<span class="l2"><em>Exceptional Outcomes.</em></span></h1>
-    <p class="anim a3">Strategic commercial real estate brokers and advisors serving Maryland and the greater D.C. corridor — Anne Arundel, Prince George's, Montgomery, Howard, Frederick, Carroll, and Baltimore Counties.</p>
+    <p class="anim a3">{{ settings.hero_paragraph }}</p>
     <div class="hero-cta anim a4">
       <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Request a Consultation</span></a>
-      <a href="tel:4435290505" class="btn btn-ghost magnetic" data-cursor><span>Call (443) 529-0505</span></a>
+      <a href="tel:{{ settings.phone_href }}" class="btn btn-ghost magnetic" data-cursor><span>Call {{ settings.phone }}</span></a>
     </div>
   </div>
 </section>
@@ -452,20 +452,18 @@
         </video>
       </div>
       <div class="evan-photo">
-        <!-- EVAN PHOTO: 2026 headshot hosted on the firm's CDN -->
-        <div class="frame" id="evanFrame"><img src="https://lirp.cdn-website.com/a8a63bb6/dms3rep/multi/opt/EKL+2026+Headshot-640w.jpeg" alt="Evan Langert, Managing Director, The Langert Commercial Group" loading="lazy" decoding="async"></div>
-        <div class="evan-badge"><div class="bn">35+</div><div class="bl">Years in CRE</div></div>
+        <div class="frame" id="evanFrame"><img src="{{ bio.photo }}" alt="{{ bio.name }}, {{ bio.role }}" loading="lazy" decoding="async"></div>
+        <div class="evan-badge"><div class="bn">{{ bio.badge_number }}</div><div class="bl">{{ bio.badge_label }}</div></div>
       </div>
     </div>
     <div class="evan-text r" style="--d:.12s">
       <span class="sidx" style="color:var(--blue-2)">Leadership</span>
-      <div class="evan-name"><h2>Evan Langert</h2><span class="esq">Attorney by Background</span></div>
-      <div class="evan-role">President &middot; The Langert Commercial Group, Inc.</div>
-      <p>For more than 20 years, Evan Langert has represented buyers, sellers, landlords, tenants, investors, churches, schools, and business owners throughout Maryland, Washington, D.C., and beyond (we've done numerous investment deals from New York to Florida). As President of The Langert Commercial Group, Inc., Evan specializes in commercial real estate sales, leasing, investment properties, church and nonprofit real estate, office buildings, retail centers, industrial properties, land, and multifamily assets. His clients benefit from a unique combination of high-level legal, lending, ownership, and brokerage experience that allows him to identify opportunities, solve problems, and navigate complex transactions with confidence.</p>
-      <p>Before entering commercial real estate brokerage, Evan spent almost a decade as the senior transactional real estate attorney for the eastern half of the United States for a multi-billion-dollar publicly traded real estate investment trust (REIT). The REIT was also fully diversified, with significant retail, office, industrial, multifamily, and hospitality portfolios in over 20 different states. As such, Evan received an extensive education on dealing with all five major property types. Earlier in his career, he worked as a commercial real estate lender at one of the top 25 banks in the country, evaluating and financing a wide range of investment and owner-user properties. This background provides clients with insights that extend beyond those offered by traditional brokerages, including transaction structuring, due diligence, lease analysis, financing considerations, risk assessment, and negotiations.</p>
-      <p>Evan has successfully represented clients in the sale and leasing of retail, office, industrial, religious, educational, multi-family, hospitality, and investment properties across the Washington and Baltimore metropolitan regions. His experience includes helping churches and nonprofit organizations maximize the value of their real estate assets, assisting franchisees and other business owners with site selection and expansion strategies, and advising investors on acquisition, disposition, and leasing opportunities. He is known for providing practical, straightforward advice grounded in decades of real-world commercial real estate experience.</p>
-      <p>At The Langert Commercial Group, clients work directly with an experienced commercial real estate professional who remains personally involved throughout every stage of the assignment. Whether the objective is buying or selling a commercial property, locating investment opportunities, leasing office, retail or industrial space, acquiring land for development, or evaluating a church or nonprofit property, Evan's focus is the same: delivering thoughtful guidance, strong advocacy, and results-driven commercial real estate solutions throughout Maryland, Washington, D.C., and beyond.</p>
-      <p class="disc">Evan Langert is an attorney by background. The Langert Commercial Group provides commercial real estate brokerage and advisory services only — the firm does not practice law, render legal advice, or accept legal engagements.</p>
+      <div class="evan-name"><h2>{{ bio.name }}</h2><span class="esq">{{ bio.credential }}</span></div>
+      <div class="evan-role">{{ bio.role }}</div>
+      {%- for p in bio.paragraphs %}
+      <p>{{ p }}</p>
+      {%- endfor %}
+      <p class="disc">{{ bio.disclaimer }}</p>
     </div>
   </div>
 </section>
@@ -479,74 +477,23 @@
       <p>From a single storefront to a multi-million-square-foot portfolio, our team brings deep expertise across all six core categories of commercial real estate.</p>
     </div>
     <div class="tabbar r">
-      <button class="tabbtn active" data-tab="office" data-cursor>Office</button>
-      <button class="tabbtn" data-tab="retail" data-cursor>Retail &amp; Restaurant</button>
-      <button class="tabbtn" data-tab="industrial" data-cursor>Industrial &amp; Flex</button>
-      <button class="tabbtn" data-tab="multifamily" data-cursor>Multi-Family</button>
-      <button class="tabbtn" data-tab="land" data-cursor>Land &amp; Development</button>
-      <button class="tabbtn" data-tab="churches" data-cursor>Churches / Houses of Worship</button>
+      {%- for s in services %}
+      <button class="tabbtn{% if loop.first %} active{% endif %}" data-tab="{{ s.id }}" data-cursor>{{ s.label }}</button>
+      {%- endfor %}
     </div>
     <div class="panels r" style="--d:.1s">
-      <div class="panel active" id="office">
-        <div class="pbg" data-bg="url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fm=webp&fit=crop&w=1600&q=80')"></div>
+      {%- for s in services %}
+      <div class="panel{% if loop.first %} active{% endif %}" id="{{ s.id }}">
+        <div class="pbg" data-bg="url('{{ s.image }}')"></div>
         <div class="pcontent">
-          <div class="pnum">01</div>
-          <h3>Landlord &amp; Tenant Representation</h3>
-          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented office tenants, landlords, investors, and owner-users in the leasing, acquisition, and disposition of office properties throughout Maryland and Washington, D.C. — including office buildings, medical offices, professional office space, office condominiums, and office investments. Serving clients from small professional practices to regional and national companies, Evan draws on his background in brokerage, law, and commercial real estate lending to provide valuable insight into negotiations, lease structures, due diligence, and transaction strategy — and remains personally involved throughout every assignment from start to finish.</p>
-          <div class="ptags"><span>Multi-Tenant Buildings</span><span>Office Parks</span><span>Flex Space</span><span>Medical Office</span><span>Mixed-Use</span></div>
-          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Discuss Your Office Needs</span></a>
+          <div class="pnum">{{ s.num }}</div>
+          <h3>{{ s.heading }}</h3>
+          <p>{{ s.body }}</p>
+          <div class="ptags">{% for t in s.tags %}<span>{{ t }}</span>{% endfor %}</div>
+          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>{{ s.cta }}</span></a>
         </div>
       </div>
-      <div class="panel" id="retail">
-        <div class="pbg" data-bg="url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fm=webp&fit=crop&w=1600&q=80')"></div>
-        <div class="pcontent">
-          <div class="pnum">02</div>
-          <h3>From Mom-and-Pop to National Chains</h3>
-          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented retail and restaurant tenants, landlords, investors, and franchisees in the leasing, acquisition, and disposition of retail properties throughout Maryland and Washington, D.C. — from shopping centers and freestanding retail buildings to restaurants and mixed-use projects. Clients have ranged from local entrepreneurs to national brands including Texas Roadhouse, Golden Corral, Starbucks, Chipotle, and Popeyes. Having previously owned both a restaurant franchise and an independent retail business, Evan understands firsthand the challenges of selecting locations, negotiating leases, and controlling occupancy costs — and remains personally involved throughout every assignment.</p>
-          <div class="ptags"><span>Site Selection</span><span>Restaurant Space</span><span>Multi-State Rollouts</span><span>Tenant Representation</span></div>
-          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Find Your Retail Space</span></a>
-        </div>
-      </div>
-      <div class="panel" id="industrial">
-        <div class="pbg" data-bg="url('https://images.unsplash.com/photo-1553413077-190dd305871c?auto=format&fm=webp&fit=crop&w=1600&q=80')"></div>
-        <div class="pcontent">
-          <div class="pnum">03</div>
-          <h3>Distribution, Manufacturing &amp; Special-Needs Space</h3>
-          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented industrial and flex space tenants, landlords, investors, and owner-users in the leasing, acquisition, and disposition of industrial properties throughout Maryland and Washington, D.C. — including warehouse, office/warehouse, distribution, contractor, and owner-user facilities. Clients have included contractors, distributors, transportation companies, and service providers such as Maryland Twisters (an approximately 31,000-square-foot athletic training facility), Freestate Ambulance, and Signarama. Evan's background in brokerage, law, and commercial real estate lending — including prior legal work on industrial transactions for FedEx and Clear Channel Communications — gives clients valuable insight into negotiations, due diligence, and transaction strategy, with Evan personally involved throughout every assignment.</p>
-          <div class="ptags"><span>Warehouse</span><span>Manufacturing</span><span>Cold Storage</span><span>Data Centers</span><span>Flex Space</span></div>
-          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Explore Industrial Options</span></a>
-        </div>
-      </div>
-      <div class="panel" id="multifamily">
-        <div class="pbg" data-bg="url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fm=webp&fit=crop&w=1600&q=80')"></div>
-        <div class="pcontent">
-          <div class="pnum">04</div>
-          <h3>From 4 Units to Several Hundred</h3>
-          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented multifamily owners, investors, buyers, and sellers in the acquisition, disposition, and valuation of apartment buildings and mixed-use properties throughout Maryland, Washington, D.C., and beyond — including a multifamily portfolio acquisition in upstate New York. Successful multifamily investing requires evaluating rental income, operating expenses, cap rates, financing, and long-term appreciation, and Evan's background in brokerage, law, and commercial real estate lending gives clients valuable insight into investment analysis, due diligence, and transaction strategy — whether acquiring, selling, completing a 1031 exchange, or growing a portfolio.</p>
-          <div class="ptags"><span>Acquisitions</span><span>Dispositions</span><span>Asset Valuation</span><span>EB-5 Financing</span><span>New Development</span></div>
-          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Grow Your Portfolio</span></a>
-        </div>
-      </div>
-      <div class="panel" id="land">
-        <div class="pbg" data-bg="url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fm=webp&fit=crop&w=1600&q=80')"></div>
-        <div class="pcontent">
-          <div class="pnum">05</div>
-          <h3>Positioning Sites for Their Highest &amp; Best Use</h3>
-          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented landowners, investors, developers, builders, and nonprofits in the acquisition, disposition, and valuation of land throughout Maryland and Washington, D.C. — including development sites, infill properties, redevelopment opportunities, and land suited for office, retail, industrial, multifamily, and mixed-use projects. Because zoning, access, utilities, environmental considerations, and governmental approvals can all significantly impact value, Evan's background in brokerage, law, and commercial real estate lending gives clients valuable insight into due diligence, entitlements, and transaction structure — positioning every site for its highest and best use.</p>
-          <div class="ptags"><span>Raw Land</span><span>Infill Sites</span><span>Zoning &amp; Entitlements</span><span>Feasibility Analysis</span><span>Redevelopment</span></div>
-          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Discuss a Development Site</span></a>
-        </div>
-      </div>
-      <div class="panel" id="churches">
-        <div class="pbg" data-bg="url('https://images.unsplash.com/photo-1473177104440-ffee2f376098?auto=format&fm=webp&fit=crop&w=1600&q=80')"></div>
-        <div class="pcontent">
-          <div class="pnum">06</div>
-          <h3>Faith Facilities &amp; Houses of Worship</h3>
-          <p>For more than 20 years, Evan Langert and The Langert Commercial Group have represented churches, ministries, and religious organizations in the acquisition, disposition, valuation, and leasing of worship facilities throughout Maryland and Washington, D.C. — including assignments for Faith Baptist Church, Grace Chinese Christian Church, Arundel Christian Church, and the prominent Bethesda Church property at 5144 Massachusetts Avenue. Church real estate presents unique challenges involving zoning, parking, nonprofit governance, and balancing financial considerations with ministry objectives — and Evan brings a rare personal understanding to this work as a Bible school graduate and praise and worship leader of more than 25 years.</p>
-          <div class="ptags"><span>Church Sales &amp; Acquisitions</span><span>Congregation Relocation</span><span>Special-Purpose Valuation</span><span>Qualified Buyer Outreach</span><span>Zoning &amp; Repurposing</span></div>
-          <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Discuss a Faith Property</span></a>
-        </div>
-      </div>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -560,25 +507,27 @@
       <p>A selection of the commercial properties we're currently representing across Maryland and the Washington, D.C. corridor.</p>
     </div>
     <div style="max-width:820px;margin:0 auto">
-      <div class="lcard r stack-m" style="display:grid;grid-template-columns:1fr 1fr">
-        <div class="limg" style="aspect-ratio:unset;min-height:320px"><div class="bg" data-bg="url('https://images1.loopnet.com/i2/xo0MnVvP-b2bLsivlslGHIqhq9uwnwD8JnY5s092tCM/112/5144-Massachusetts-Ave-Bethesda-MD-Primary-Photo-1-HighDefinition.jpg')"></div><span class="lstatus">For Sale</span><span class="ltag">Special Purpose</span></div>
+      {%- for l in listings %}
+      <div class="lcard r stack-m" style="display:grid;grid-template-columns:1fr 1fr{% if not loop.first %};margin-top:28px{% endif %}">
+        <div class="limg" style="aspect-ratio:unset;min-height:320px"><div class="bg" data-bg="url('{{ l.photo }}')"></div><span class="lstatus">{{ l.status }}</span><span class="ltag">{{ l.tag }}</span></div>
         <div class="lbody" style="padding:32px">
-          <h3 style="font-size:1.6rem">5144 Massachusetts Ave</h3>
-          <div class="laddr" style="margin-bottom:10px">Bethesda, MD 20816</div>
+          <h3 style="font-size:1.6rem">{{ l.title }}</h3>
+          <div class="laddr" style="margin-bottom:10px">{{ l.address }}</div>
           <div class="lspecs" style="margin-bottom:18px">
-            <div class="sp"><div class="sv">28,700 SF</div><div class="sl">Building Size</div></div>
-            <div class="sp"><div class="sv">2.15 Acres</div><div class="sl">Site Area</div></div>
-            <div class="sp"><div class="sv">$15M</div><div class="sl">Asking Price</div></div>
+            {%- for sp in l.specs %}
+            <div class="sp"><div class="sv">{{ sp.value }}</div><div class="sl">{{ sp.label }}</div></div>
+            {%- endfor %}
           </div>
-          <p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px">Just taken to market: an architecturally distinguished church property zoned R-60 in a premier Bethesda location. The property generates strong interim income — a Montessori School tenant on a month-to-month lease at <strong style="color:var(--ink)">$7,000/mo</strong> and Verizon &amp; T-Mobile cellular equipment in the steeple producing an additional <strong style="color:var(--ink)">~$7,000/mo</strong> in combined revenue. Significant land component and zoning may offer long-term redevelopment or repositioning potential (buyer to verify). A rare opportunity to acquire a high-quality institutional asset with immediate cash flow and compelling future upside.</p>
+          <p style="font-size:.88rem;color:var(--muted);line-height:1.65;margin-bottom:16px">{{ l.description | safe }}</p>
           <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px">
-            <span style="background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--muted)">Zoning: R-60</span>
-            <span style="background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--muted)">Immediate Cash Flow</span>
-            <span style="background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--muted)">Redevelopment Potential</span>
+            {%- for h in l.highlights %}
+            <span style="background:var(--paper);border:1px solid var(--line);padding:5px 12px;border-radius:100px;font-size:.72rem;font-weight:600;color:var(--muted)">{{ h }}</span>
+            {%- endfor %}
           </div>
           <div class="lcta"><a href="#contact" class="llink" data-cursor>Request Details <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
         </div>
       </div>
+      {%- endfor %}
     </div>
     <div class="center r" style="margin-top:50px"><a href="#contact" class="btn btn-dark magnetic" data-cursor><span>Inquire About a Property</span></a></div>
   </div>
@@ -587,9 +536,9 @@
 <!-- ============ STATS ============ -->
 <section class="stats pad">
   <div class="wrap sgrid">
-    <div class="stat r"><div class="n" data-target="35" data-suffix="+">0</div><div class="l">Years in Commercial Real Estate</div></div>
-    <div class="stat r" style="--d:.1s"><div class="n" data-target="20" data-suffix="+">0</div><div class="l">Years of Brokerage Experience</div></div>
-    <div class="stat r" style="--d:.2s"><div class="n" data-target="6">0</div><div class="l">Asset Classes Covered</div></div>
+    {%- for st in settings.stats %}
+    <div class="stat r" style="--d:.{{ loop.index0 }}s"><div class="n" data-target="{{ st.number }}"{% if st.suffix %} data-suffix="{{ st.suffix }}"{% endif %}>0</div><div class="l">{{ st.label }}</div></div>
+    {%- endfor %}
   </div>
 </section>
 
@@ -603,24 +552,14 @@
     </div>
     <div class="center r" style="margin-bottom:16px"><span class="sidx">Video Library</span></div>
     <div class="vgrid">
-      <div class="vcard r">
+      {%- for v in videos %}
+      <div class="vcard r"{% if not loop.first %} style="--d:.{{ loop.index0 }}2s"{% endif %}>
         <div class="vframe">
-          <iframe src="https://www.youtube.com/embed/bRWboobg46E" title="Tableside Talk: Commercial Real Estate Investments" allowfullscreen loading="lazy"></iframe>
+          <iframe src="https://www.youtube.com/embed/{{ v.youtube_id }}" title="{{ v.title }}" allowfullscreen loading="lazy"></iframe>
         </div>
-        <div class="vinfo"><h3>Tableside Talk: Commercial Real Estate Investments</h3><p>Evan breaks down what investors need to know before entering the commercial real estate market.</p></div>
+        <div class="vinfo"><h3>{{ v.title }}</h3><p>{{ v.description }}</p></div>
       </div>
-      <div class="vcard r" style="--d:.12s">
-        <div class="vframe">
-          <iframe src="https://www.youtube.com/embed/F9QvRrRdGy8" title="Tableside Talk: 1031 Exchanges" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="vinfo"><h3>Tableside Talk: 1031 Exchanges</h3><p>A practical guide to 1031 exchanges — how they work, when to use them, and what investors often get wrong.</p></div>
-      </div>
-      <div class="vcard r" style="--d:.24s">
-        <div class="vframe">
-          <iframe src="https://www.youtube.com/embed/8pMk7ZwPHWk" title="Tableside Talk: Rent and Occupancy Costs" allowfullscreen loading="lazy"></iframe>
-        </div>
-        <div class="vinfo"><h3>Tableside Talk: Rent &amp; Occupancy Costs</h3><p>Understanding the true cost of occupancy — beyond base rent — and how to negotiate smarter lease terms.</p></div>
-      </div>
+      {%- endfor %}
     </div>
     <div class="center r" style="margin-top:22px"><a href="https://www.youtube.com/@thelangertcommercialgroup" target="_blank" rel="noopener" class="btn btn-dark magnetic" data-cursor><span>Visit Our YouTube Channel</span></a></div>
 
@@ -636,20 +575,15 @@
       .txread{margin-top:14px;font-size:.84rem;font-weight:600;color:var(--blue-3,#3b5a96)}
     </style>
     <div class="txgrid">
-      <a class="txcard r" href="https://keycrew.co/journal/vacancy-rates-in-the-baltimore-washington-corridor-tell-different-stories-depending-on-where-you-look/" target="_blank" rel="noopener" data-cursor>
-        <span class="txtag">KeyCrew Journal</span>
-        <div class="txmeta">June 15, 2026 — Market Commentary</div>
-        <h3>The Baltimore–Washington Corridor Is Recovering, Just Not Everywhere at Once</h3>
-        <p>Evan Langert is quoted throughout this look at why headline vacancy statistics mask sharply different recoveries across the corridor's submarkets — and what that means for businesses choosing a location. "Most people are not going to make a left turn across traffic to go to your place."</p>
+      {%- for a in press %}
+      <a class="txcard r"{% if not loop.first %} style="--d:.{{ loop.index0 }}s"{% endif %} href="{{ a.url }}" target="_blank" rel="noopener" data-cursor>
+        <span class="txtag">{{ a.publication }}</span>
+        <div class="txmeta">{{ a.meta }}</div>
+        <h3>{{ a.title }}</h3>
+        <p>{{ a.summary }}</p>
         <span class="txread">Read the article &rarr;</span>
       </a>
-      <a class="txcard r" style="--d:.1s" href="https://www.bizjournals.com/washington/news/2026/04/22/5144-mass-bethesda-langert-commercial-church.html" target="_blank" rel="noopener" data-cursor>
-        <span class="txtag">Washington Business Journal</span>
-        <div class="txmeta">April 22, 2026 — Deal Coverage</div>
-        <h3>Prominent Bethesda Church at 5144 Massachusetts Ave Hits the Market</h3>
-        <p>The Washington Business Journal covers The Langert Commercial Group's exclusive listing of the 28,700 SF Bethesda Church property on 2.15 acres — a rare institutional asset with interim income from a Montessori school tenant and cellular equipment in the steeple.</p>
-        <span class="txread">Read the article &rarr;</span>
-      </a>
+      {%- endfor %}
     </div>
   </div>
 </section>
@@ -715,9 +649,9 @@
         <h2>Planning to acquire, sell, or lease — or looking to <em>grow your investments?</em></h2>
         <p>Reach out for a confidential consultation. We work directly with you from start to finish.</p>
         <div class="cta-links">
-          <a href="tel:4435290505"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> (443) 529-0505</a>
-          <a href="mailto:elangert@thelangertgroup.com"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> elangert@thelangertgroup.com</a>
-          <a href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> 10015 Old Columbia Road, Columbia, MD 21045</a>
+          <a href="tel:{{ settings.phone_href }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> {{ settings.phone }}</a>
+          <a href="mailto:{{ settings.email }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> {{ settings.email }}</a>
+          <a href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> {{ settings.address_line1 }}, {{ settings.address_line2 }}</a>
         </div>
       </div>
       <div class="cform">
@@ -777,7 +711,7 @@
         <span class="logomark"><span class="lm-blue"></span><span class="lm-dark"></span></span>
         <span class="mark" style="display:block;margin-top:14px">The Langert Group</span>
         <span class="sub">Signature Commercial Real Estate Services</span>
-        <p style="margin-top:18px">10015 Old Columbia Road<br>Columbia, MD 21045</p>
+        <p style="margin-top:18px">{{ settings.address_line1 }}<br>{{ settings.address_line2 }}</p>
         <div class="fsocial">
           <a href="https://www.facebook.com/EvanLangertCRE/" data-cursor aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
           <a href="https://www.linkedin.com/company/the-langert-commercial-group/" data-cursor aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
@@ -794,9 +728,9 @@
       </div>
       <div class="fcol">
         <h4>Contact</h4>
-        <p>Office: <a href="tel:4435290505" style="display:inline">(443) 529-0505</a></p>
-        <p>Direct: (650) 714-3826</p>
-        <p><a href="mailto:elangert@thelangertgroup.com" style="display:inline">elangert@thelangertgroup.com</a></p>
+        <p>Office: <a href="tel:{{ settings.phone_href }}" style="display:inline">{{ settings.phone }}</a></p>
+        <p>Direct: {{ settings.direct_phone }}</p>
+        <p><a href="mailto:{{ settings.email }}" style="display:inline">{{ settings.email }}</a></p>
       </div>
     </div>
     <div class="fbot">
@@ -893,6 +827,16 @@
     const ef=document.getElementById('evanFrame');
     if(ef){const wrap=ef.closest('.evan-photo');wrap.addEventListener('mousemove',e=>{const r=wrap.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ef.style.transform='perspective(900px) rotateY('+x*6+'deg) rotateX('+(-y*6)+'deg)';});wrap.addEventListener('mouseleave',()=>{ef.style.transform='';});}
   }
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js" defer></script>
+<script>
+  window.addEventListener('load',function(){
+    if(window.netlifyIdentity){
+      window.netlifyIdentity.on('init',function(user){
+        if(!user){window.netlifyIdentity.on('login',function(){document.location.href='/admin/';});}
+      });
+    }
+  });
 </script>
 </body>
 </html>

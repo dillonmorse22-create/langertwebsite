@@ -1,0 +1,16 @@
+[
+  {
+    "title": "5144 Massachusetts Ave",
+    "address": "Bethesda, MD 20816",
+    "status": "For Sale",
+    "tag": "Special Purpose",
+    "photo": "https://images1.loopnet.com/i2/xo0MnVvP-b2bLsivlslGHIqhq9uwnwD8JnY5s092tCM/112/5144-Massachusetts-Ave-Bethesda-MD-Primary-Photo-1-HighDefinition.jpg",
+    "specs": [
+      { "value": "28,700 SF", "label": "Building Size" },
+      { "value": "2.15 Acres", "label": "Site Area" },
+      { "value": "$15M", "label": "Asking Price" }
+    ],
+    "highlights": ["Zoning: R-60", "Immediate Cash Flow", "Redevelopment Potential"],
+    "description": "Just taken to market: an architecturally distinguished church property zoned R-60 in a premier Bethesda location. The property generates strong interim income — a Montessori School tenant on a month-to-month lease at <strong style=\"color:var(--ink)\">$7,000/mo</strong> and Verizon &amp; T-Mobile cellular equipment in the steeple producing an additional <strong style=\"color:var(--ink)\">~$7,000/mo</strong> in combined revenue. Significant land component and zoning may offer long-term redevelopment or repositioning potential (buyer to verify). A rare opportunity to acquire a high-quality institutional asset with immediate cash flow and compelling future upside."
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "phone": "(443) 529-0505",
+  "phone_href": "4435290505",
+  "direct_phone": "(650) 714-3826",
+  "email": "elangert@thelangertgroup.com",
+  "address_line1": "10015 Old Columbia Road",
+  "address_line2": "Columbia, MD 21045",
+  "hero_eyebrow": "Serving Maryland & Washington, D.C.",
+  "hero_paragraph": "Strategic commercial real estate brokers and advisors serving Maryland and the greater D.C. corridor — Anne Arundel, Prince George's, Montgomery, Howard, Frederick, Carroll, and Baltimore Counties.",
+  "stats": [
+    { "number": 35, "suffix": "+", "label": "Years in Commercial Real Estate" },
+    { "number": 20, "suffix": "+", "label": "Years of Brokerage Experience" },
+    { "number": 6, "suffix": "", "label": "Asset Classes Covered" }
+  ]
+}
