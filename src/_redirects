@@ -1,0 +1,40 @@
+# 301 redirects from old Duda site URLs to the new single-page site
+# Protects accumulated SEO value when the domain switches platforms
+
+/about-us                    /#about       301
+/evan-langert                /#about       301
+/evan-langert-full-bio       /#about       301
+/our-advisors                /#about       301
+
+/services                    /#specialties 301
+/services/*                  /#specialties 301
+/commercial-real-estate      /#specialties 301
+/income-properties           /#specialties 301
+/land-acquisition            /#specialties 301
+/hotels/*                    /#specialties 301
+/valuations                  /#specialties 301
+
+/our-deals                   /#listings    301
+/request-off-market-deals    /#contact     301
+
+/insights-2                  /#insights    301
+/commercial-real-estate-blog-dmv                                /#insights 301
+/is-this-a-good-time-to-lease-office-space                      /#insights 301
+/does-your-lease-protect-you-in-case-of-floods-or-other-damage  /#insights 301
+/five-pitfalls-in-your-commercial-lease                         /#insights 301
+/should-i-hire-a-commercial-real-estate-agent-or-go-it-alone    /#insights 301
+/why-invest-in-single-tenant-triple-net-properties              /#insights 301
+/should-i-have-an-exclusive-use-clause-in-my-lease              /#insights 301
+
+/reviews                     /#reviews     301
+/contact                     /#contact     301
+/free-consultation           /#contact     301
+/careers                     /#contact     301
+
+/privacy-policy              /privacy.html 301
+/accessibility-statement     /             301
+/dmca-notice                 /             301
+/airbnb-rental-investments   /             301
+/download-free-resource      /             301
+/home-old                    /             301
+/home-revise-2               /             301
