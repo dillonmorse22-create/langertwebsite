@@ -1,16 +1,56 @@
 [
   {
     "publication": "KeyCrew Journal",
-    "meta": "June 15, 2026 — Market Commentary",
+    "date": "June 15, 2026",
     "title": "The Baltimore–Washington Corridor Is Recovering, Just Not Everywhere at Once",
-    "summary": "Evan Langert is quoted throughout this look at why headline vacancy statistics mask sharply different recoveries across the corridor's submarkets — and what that means for businesses choosing a location. \"Most people are not going to make a left turn across traffic to go to your place.\"",
     "url": "https://keycrew.co/journal/vacancy-rates-in-the-baltimore-washington-corridor-tell-different-stories-depending-on-where-you-look/"
   },
   {
+    "publication": "Baltimore Business Journal",
+    "date": "May 11, 2026",
+    "title": "Qamaria Yemeni Coffee Expands to Columbia",
+    "url": "https://www.bizjournals.com/baltimore/news/2026/05/11/qamaria-yemeni-coffee-expands-columbia.html"
+  },
+  {
+    "publication": "MoCo Show",
+    "date": "May 3, 2026",
+    "title": "Qamaria Yemeni Coffee to Open First Maryland Store This Month, Eyeing MoCo Locations",
+    "url": "https://mocoshow.com/2026/05/03/qamaria-yemeni-coffee-to-open-first-maryland-store-this-month-eyeing-moco-locations-as-expansion-continues/"
+  },
+  {
+    "publication": "MSN",
+    "date": "May 2026",
+    "title": "Yemeni Coffee Chain to Open First Baltimore-Area Shop",
+    "url": "https://www.msn.com/en-us/food-and-drink/beverages/yemeni-coffee-chain-to-open-first-baltimore-area-shop/ar-AA231Stj"
+  },
+  {
+    "publication": "The Merriweather Post",
+    "date": "May 2026",
+    "title": "Qamaria Yemeni Coffee Coming to the Columbia / Merriweather Area",
+    "url": "https://www.facebook.com/themerriweatherpost/posts/1897417421199062/"
+  },
+  {
+    "publication": "Washingtonian",
+    "date": "April 24, 2026",
+    "title": "A Massive Bethesda Church Just Hit the Market for $15 Million",
+    "url": "https://washingtonian.com/2026/04/24/massive-bethesda-church-market-15-million/"
+  },
+  {
+    "publication": "Bethesda Magazine",
+    "date": "April 23, 2026",
+    "title": "70-Year-Old Church Hits the Market for $15M in Bethesda",
+    "url": "https://bethesdamagazine.com/2026/04/23/70-year-old-church-hits-the-market-for-15m-in-bethesda/"
+  },
+  {
     "publication": "Washington Business Journal",
-    "meta": "April 22, 2026 — Deal Coverage",
+    "date": "April 22, 2026",
     "title": "Prominent Bethesda Church at 5144 Massachusetts Ave Hits the Market",
-    "summary": "The Washington Business Journal covers The Langert Commercial Group's exclusive listing of the 28,700 SF Bethesda Church property on 2.15 acres — a rare institutional asset with interim income from a Montessori school tenant and cellular equipment in the steeple.",
     "url": "https://www.bizjournals.com/washington/news/2026/04/22/5144-mass-bethesda-langert-commercial-church.html"
+  },
+  {
+    "publication": "MoCo Show",
+    "date": "April 22, 2026",
+    "title": "One of Maryland's Highest-Rated Church Properties Hits the Market for $15 Million in Bethesda",
+    "url": "https://mocoshow.com/2026/04/22/one-of-marylands-highest-rated-church-properties-hits-the-market-for-15-million-in-bethesda/"
   }
 ]

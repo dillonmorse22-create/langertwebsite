@@ -51,9 +51,8 @@ collections:
             root: true
             fields:
               - { label: "Publication Name", name: "publication", widget: "string" }
-              - { label: "Date & Type (e.g. June 15, 2026 — Market Commentary)", name: "meta", widget: "string" }
+              - { label: "Date (e.g. June 15, 2026)", name: "date", widget: "string" }
               - { label: "Article Title", name: "title", widget: "string" }
-              - { label: "Summary", name: "summary", widget: "text" }
               - { label: "Article URL", name: "url", widget: "string" }
 
   - name: "videos"
