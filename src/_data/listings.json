@@ -8,10 +8,10 @@
     "specs": [
       { "value": "28,700 SF", "label": "Building Size" },
       { "value": "2.15 Acres", "label": "Site Area" },
-      { "value": "$15M", "label": "Asking Price" }
+      { "value": "$12,995,000", "label": "Asking Price" }
     ],
-    "highlights": ["Zoning: R-60", "Immediate Cash Flow", "Redevelopment Potential"],
-    "description": "Just taken to market: an architecturally distinguished church property zoned R-60 in a premier Bethesda location. The property generates strong interim income — a Montessori School tenant on a month-to-month lease at <strong style=\"color:var(--ink)\">$7,000/mo</strong> and Verizon &amp; T-Mobile cellular equipment in the steeple producing an additional <strong style=\"color:var(--ink)\">~$7,000/mo</strong> in combined revenue. Significant land component and zoning may offer long-term redevelopment or repositioning potential (buyer to verify). A rare opportunity to acquire a high-quality institutional asset with immediate cash flow and compelling future upside."
+    "highlights": ["Four-Star Rated", "Immediate Cash Flow", "Prime Bethesda Location"],
+    "description": "A rare opportunity to acquire an architecturally distinguished 28,700-square-foot church and educational complex on 2.15 acres in one of Bethesda's most prestigious locations, approximately one block from the Washington, D.C. line and near Spring Valley. It is one of only six church properties in Maryland rated four stars out of five by the major commercial real estate databases — and the only one in Montgomery County. The complex includes a main sanctuary, secondary assembly space, a commercial kitchen, classrooms, and offices. The property also generates strong interim income — a Montessori School tenant on a month-to-month lease and Verizon &amp; T-Mobile cellular equipment in the steeple — producing approximately <strong style=\"color:var(--ink)\">$14,000/mo</strong> in total interim revenue. A high-quality institutional asset with immediate cash flow in a premier location."
   },
   {
     "title": "7272 & 7274 Cradlerock Way",
@@ -20,12 +20,12 @@
     "tag": "Office Condo",
     "photo": "/uploads/7272-cradlerock.jpg",
     "specs": [
-      { "value": "2,500 SF", "label": "Per Unit" },
+      { "value": "1,781 SF", "label": "Per Unit" },
       { "value": "$410K", "label": "Each Unit" },
       { "value": "$799K", "label": "Both Units" }
     ],
     "highlights": ["Owen Brown Village", "Split-Level Design", "Available Individually"],
-    "description": "Two adjacent two-story townhome office condominiums in Owen Brown Village, near Lake Elkhorn and adjacent to Giant Food and McDonald's with quick access to Routes 29, 32, and 175. Each unit offers a split-level layout with a main-level lobby, three offices/treatment rooms upstairs and three more downstairs, private restrooms on both levels, and a walkout patio. Unit 7272 is also available for lease at <strong style=\"color:var(--ink)\">$3,500/mo</strong> ($27.50/SF modified gross). Purchase either unit individually or both together — ideal for an owner-user or professional practice."
+    "description": "Two adjacent two-story townhome office condominiums — approximately 1,781 SF each, or roughly 3,562 SF combined — in Owen Brown Village, near Lake Elkhorn and adjacent to Giant Food and McDonald's with quick access to Routes 29, 32, and 175. Each unit offers a split-level layout with a main-level lobby, three offices/treatment rooms upstairs and three more downstairs, private restrooms on both levels, and a walkout patio. Unit 7272 is also available for lease at <strong style=\"color:var(--ink)\">$3,500/mo</strong> ($27.50/SF modified gross). Purchase either unit individually or both together — ideal for an owner-user or professional practice."
   },
   {
     "title": "5721–25 Main Street",
@@ -39,6 +39,6 @@
       { "value": "$775K", "label": "Asking Price" }
     ],
     "highlights": ["B1 Zoning", "Historic Tax Credits", "Steps from Route 1"],
-    "description": "A B1-zoned corner property at Main Street and Furnace Road, improved by an approximately 3,200 SF metal warehouse with five drive-in doors and an approximately 4,612 SF mixed-use office building with a residential component. One block from Route 1 at the entrances to I-895, I-195, and Route 100, roughly seven minutes from BWI-Thurgood Marshall Airport. Historic zoning may entitle the owner to certain tax credits for improvements (buyer to verify). Both structures need substantial work — a strong value-add or redevelopment opportunity in a high-visibility location."
+    "description": "A B1-zoned corner property at Main Street and Furnace Road, improved by an approximately 3,200 SF metal warehouse with five drive-in doors and an approximately 4,612 SF mixed-use office building with a residential component. One block from Route 1 at the entrances to I-895, I-195, and Route 100, roughly seven minutes from BWI-Thurgood Marshall Airport. The properties are listed in the Maryland Inventory of Historic Properties and may qualify for certain historic rehabilitation tax credits, subject to the applicable program requirements and approval. Buyer should independently verify eligibility. Both structures need substantial work — a strong value-add or redevelopment opportunity in a high-visibility location."
   }
 ]

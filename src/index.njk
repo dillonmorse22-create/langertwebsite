@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Langert Commercial Group | Commercial Real Estate Brokers — MD & DC</title>
+<title>Maryland &amp; DC Commercial Real Estate Broker | Evan Langert</title>
 
 <!-- ===== SEO: Core ===== -->
-<meta name="description" content="The Langert Commercial Group — strategic commercial real estate brokers and advisors serving Maryland and Washington, D.C. Specializing in office, retail, industrial, multifamily, land, and church properties. Led by Evan Langert, attorney and 20+ year CRE veteran.">
+<meta name="description" content="Evan Langert represents commercial real estate tenants, buyers, sellers, landlords and investors throughout Maryland and Washington, D.C., with 35+ years of legal, lending, ownership and brokerage experience.">
 <meta name="keywords" content="commercial real estate Maryland, commercial real estate Washington DC, commercial real estate broker, office space Maryland, retail leasing Maryland, industrial space Maryland, church real estate, Evan Langert, The Langert Group, Anne Arundel County commercial real estate, Montgomery County commercial real estate, Howard County commercial real estate">
 <meta name="author" content="Evan Langert, The Langert Commercial Group">
 <meta name="robots" content="index, follow">
@@ -65,7 +65,7 @@
   ],
   "sameAs": [
     "https://www.facebook.com/EvanLangertCRE/",
-    "https://www.linkedin.com/company/the-langert-commercial-group/",
+    "https://www.linkedin.com/in/evanlangertcre/",
     "https://www.youtube.com/@thelangertcommercialgroup"
   ],
   "employee": {
@@ -74,7 +74,7 @@
     "jobTitle": "President",
     "description": "Commercial real estate broker with 20+ years of experience, attorney by background, former REIT transactional attorney and commercial real estate lender.",
     "telephone": "+16507143826",
-    "sameAs": "https://www.linkedin.com/company/the-langert-commercial-group/"
+    "sameAs": "https://www.linkedin.com/in/evanlangertcre/"
   }
 }
 </script>
@@ -183,9 +183,10 @@
   .hero-glow{position:absolute;z-index:1;width:55vw;height:55vw;right:-10vw;top:-10vw;background:radial-gradient(circle,rgba(126,153,209,.4),transparent 62%);filter:blur(40px);animation:float 14s ease-in-out infinite}
   @keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-4%,5%) scale(1.08)}}
   .hero-inner{position:relative;z-index:3;width:100%;padding-top:60px}
-  .hero h1{font-size:clamp(3rem,6.5vw,5.4rem);margin:18px 0 22px;letter-spacing:-.035em;font-weight:400}
-  .hero h1 .l2{display:block}
-  .hero h1 em{font-style:italic;color:var(--blue-2);font-weight:300}
+  .hero .hero-big{font-family:var(--serif);color:#fff;font-size:clamp(3rem,6.5vw,5.4rem);margin:10px 0 20px;letter-spacing:-.035em;font-weight:400;line-height:1.04}
+  .hero .hero-big .l2{display:block}
+  .hero .hero-big em{font-style:italic;color:var(--blue-2);font-weight:300}
+  .hero .hero-h1{font-family:var(--serif);color:var(--blue-2);font-size:clamp(1.05rem,2vw,1.5rem);font-weight:500;letter-spacing:-.01em;line-height:1.25;max-width:660px;margin:0}
   .hero p{font-size:clamp(1.05rem,1.4vw,1.2rem);color:rgba(255,255,255,.8);max-width:580px;margin-bottom:28px;font-weight:300}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
   .hero-cta .btn{padding:13px 26px}
@@ -416,8 +417,8 @@
   <div class="hero-glow"></div>
   <div class="grain"></div>
   <div class="wrap hero-inner">
-    <span class="eyebrow light anim a1">{{ settings.hero_eyebrow }}</span>
-    <h1 class="anim a2">Expert Guidance.<span class="l2"><em>Exceptional Outcomes.</em></span></h1>
+    <h1 class="hero-h1 anim a1">Commercial Real Estate Brokerage in Maryland &amp; Washington, D.C.</h1>
+    <div class="hero-big anim a2">Expert Guidance.<span class="l2"><em>Exceptional Outcomes.</em></span></div>
     <p class="anim a3">{{ settings.hero_paragraph }}</p>
     <div class="hero-cta anim a4">
       <a href="#contact" class="btn btn-blue magnetic" data-cursor><span>Request a Consultation</span></a>
@@ -471,7 +472,7 @@
     <div class="shead center r">
       <span class="sidx">02 — Our Services</span>
       <h2>Versatility Across Every Asset Class</h2>
-      <p>From a single storefront to a multi-million-square-foot portfolio, our team brings deep expertise across all six core categories of commercial real estate.</p>
+      <p>From individual business locations to major investment and institutional properties, clients work directly with Evan Langert throughout the assignment.</p>
     </div>
     <div class="tabbar r">
       {%- for s in services %}
@@ -537,7 +538,7 @@
 <section class="stats pad">
   <div class="wrap sgrid">
     {%- for st in settings.stats %}
-    <div class="stat r" style="--d:.{{ loop.index0 }}s"><div class="n" data-target="{{ st.number }}"{% if st.suffix %} data-suffix="{{ st.suffix }}"{% endif %}>0</div><div class="l">{{ st.label }}</div></div>
+    <div class="stat r" style="--d:.{{ loop.index0 }}s"><div class="n" data-target="{{ st.number }}"{% if st.suffix %} data-suffix="{{ st.suffix }}"{% endif %}>{{ st.number }}{{ st.suffix }}</div><div class="l">{{ st.label }}</div></div>
     {%- endfor %}
   </div>
 </section>
@@ -548,7 +549,7 @@
     <div class="shead center r">
       <span class="sidx">04 — Insights</span>
       <h2>Insights &amp; Perspectives</h2>
-      <p>Market commentary, deal breakdowns, and real client outcomes — straight from our team.</p>
+      <p>Market commentary, transaction lessons and practical commercial real estate guidance from Evan Langert.</p>
     </div>
     <div class="center r" style="margin-bottom:16px"><span class="sidx">Video Library</span></div>
     <div class="vgrid">
@@ -637,6 +638,7 @@
   .fgroup textarea{resize:vertical;min-height:80px}
   .fsubmit{width:100%;margin-top:4px}
   .fsuccess{display:none;text-align:center;padding:18px;color:var(--blue-2);font-family:var(--serif);font-size:1.1rem}
+  .ferror{display:none;margin-top:14px;padding:12px 14px;border-radius:8px;background:rgba(226,75,74,.12);border:1px solid rgba(226,75,74,.45);color:#ffbcbc;font-size:.9rem;text-align:center;line-height:1.5}
   @media(max-width:900px){.cta-grid{grid-template-columns:1fr;gap:36px}.frow{grid-template-columns:1fr}}
 </style>
 <section class="cta pad" id="contact">
@@ -649,7 +651,7 @@
         <div class="cta-links">
           <a href="tel:{{ settings.phone_href }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg> {{ settings.phone }}</a>
           <a href="mailto:{{ settings.email }}"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> {{ settings.email }}</a>
-          <a href="#"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> {{ settings.address_line1 }}, {{ settings.address_line2 }}</a>
+          <a href="https://www.google.com/maps/search/?api=1&amp;query={{ settings.address_line1 | urlencode }}%2C+{{ settings.address_line2 | urlencode }}" target="_blank" rel="noopener"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg> {{ settings.address_line1 }}, {{ settings.address_line2 }}</a>
         </div>
       </div>
       <div class="cform">
@@ -682,6 +684,7 @@
           <button type="submit" class="btn btn-blue magnetic fsubmit" data-cursor><span>Send Request</span></button>
         </form>
         <div class="fsuccess" id="formSuccess">Thank you — we'll be in touch shortly.</div>
+        <div class="ferror" id="formError"></div>
       </div>
     </div>
   </div>
@@ -699,13 +702,26 @@
   function handleConsult(e){
     e.preventDefault();
     var form=document.getElementById('consultForm');
-    fetch('/',{
-      method:'POST',
-      headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body:new URLSearchParams(new FormData(form)).toString()
-    }).finally(function(){
-      form.style.display='none';
-      document.getElementById('formSuccess').style.display='block';
+    var errBox=document.getElementById('formError');
+    var btnSpan=form.querySelector('button[type=submit] span');
+    var label=btnSpan.textContent;
+    errBox.style.display='none';
+    btnSpan.textContent='Sending…';
+    var body=new URLSearchParams(new FormData(form)).toString();
+    fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:body})
+    .then(function(r){
+      if(r.ok){
+        form.style.display='none';
+        document.getElementById('formSuccess').style.display='block';
+      } else {
+        throw new Error('bad status');
+      }
+    })
+    .catch(function(){
+      btnSpan.textContent=label;
+      errBox.textContent='Sorry — your request couldn’t be sent. Please try again, or email us directly at {{ settings.email }}.';
+      errBox.style.display='block';
+      // Form stays visible and the prospect’s entries are preserved.
     });
   }
 </script>
@@ -721,13 +737,13 @@
         <p style="margin-top:18px">{{ settings.address_line1 }}<br>{{ settings.address_line2 }}</p>
         <div class="fsocial">
           <a href="https://www.facebook.com/EvanLangertCRE/" data-cursor aria-label="Facebook"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
-          <a href="https://www.linkedin.com/company/the-langert-commercial-group/" data-cursor aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
+          <a href="https://www.linkedin.com/in/evanlangertcre/" data-cursor aria-label="LinkedIn"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"/></svg></a>
           <a href="https://www.youtube.com/@thelangertcommercialgroup" data-cursor aria-label="YouTube"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M23 7a3 3 0 0 0-2-2c-2-.5-9-.5-9-.5s-7 0-9 .5a3 3 0 0 0-2 2 31 31 0 0 0 0 10 3 3 0 0 0 2 2c2 .5 9 .5 9 .5s7 0 9-.5a3 3 0 0 0 2-2 31 31 0 0 0 0-10zM10 15V9l5 3z"/></svg></a>
         </div>
       </div>
       <div class="fcol">
         <h4>Specialties</h4>
-        <a href="#specialties">Office</a><a href="#specialties">Retail &amp; Restaurant</a><a href="#specialties">Industrial &amp; Flex</a><a href="#specialties">Multi-Family</a><a href="#specialties">Land &amp; Development</a>
+        <a href="#specialties">Office</a><a href="#specialties">Retail &amp; Restaurant</a><a href="#specialties">Industrial &amp; Flex</a><a href="#specialties">Multi-Family</a><a href="#specialties">Land &amp; Development</a><a href="#specialties">Churches / Houses of Worship</a>
       </div>
       <div class="fcol">
         <h4>Company</h4>

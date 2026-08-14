@@ -10,6 +10,6 @@
   "stats": [
     { "number": 35, "suffix": "+", "label": "Years in Commercial Real Estate" },
     { "number": 20, "suffix": "+", "label": "Years of Brokerage Experience" },
-    { "number": 6, "suffix": "", "label": "Asset Classes Covered" }
+    { "number": 6, "suffix": "", "label": "Commercial Property Categories" }
   ]
 }
